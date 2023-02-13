@@ -1,0 +1,41 @@
+html, body{
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+
+*{
+	box-sizing: border-box;
+}
+
+a{
+	color: black;
+}
+
+a:not([target="_blank"]){
+	display: inline-block;
+	padding: 0.5em;
+}
+
+a:not([target="_blank"]):hover{
+	transform: scale(1.2);
+}
+
+a.isCurrent{
+	font-weight: bold;
+	transform: scale(1.2);
+}
+
+h1{
+	margin: 0 0 0 0;
+}
+
+h2{
+	margin: 0 0 0.2em 0;
+}
+
+p{
+	margin: 0 0 0.5em 0;
+	font-size: 1.2em;
+	line-height: 130%;
+}

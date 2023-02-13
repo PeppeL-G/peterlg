@@ -1,0 +1,2 @@
+<h1>About</h1>
+<p>This website is my (Peter Larsson-Green) personal website where you can read about various things I have done. The first version of the website was launched <time datetime="2023-02-13">February 13 2023</time>, and has since then been improved over time. All you can see has been implemented by me, except <a href="https://kit.svelte.dev/" target="_blank">the SvelteKit framework</a> used to implement it, of course.</p>
