@@ -1,5 +1,5 @@
 <script>
-	import { isCurrentLink } from "../actions/isCurrentLink.js"
+	import Link from "$lib/Link.svelte"
 	
 	const year = new Date().getFullYear()
 	
@@ -12,8 +12,8 @@
 		<span>Peter Larsson-Green</span>
 	</div>
 	<div class="links">
-		<a use:isCurrentLink href="/about">About</a>
-		<a use:isCurrentLink href="/changelog">v1.0.0</a>
+		<Link href="/about">About</Link>
+		<Link href="/changelog">v1.1.0</Link>
 	</div>
 </footer>
 

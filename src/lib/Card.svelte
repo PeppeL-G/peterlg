@@ -7,21 +7,25 @@
 	export let imageUrl = ""
 	export let date = ""
 	
+	import Link from "./Link.svelte"
 	import Tag from "./Tag.svelte"
+	import { base } from "$app/paths"
 	
 </script>
 
-<a href={url} class="card">
-	<h3>{title}</h3>
-	<img src={imageUrl} alt="Card.">
-	<p>{content}</p>
-	<time datetime={date}>{date}</time>
-	<div>
-		{#each tagNames as tagName}
-			<Tag name={tagName} />
-		{/each}
+<Link href={url} removeUnderline>
+	<div class="card">
+		<h3>{title}</h3>
+		<img src={base+imageUrl} alt="Card.">
+		<p>{content}</p>
+		<time datetime={date}>{date}</time>
+		<div>
+			{#each tagNames as tagName}
+				<Tag name={tagName} />
+			{/each}
+		</div>
 	</div>
-</a>
+</Link>
 
 <style>
 	
@@ -31,14 +35,8 @@
 		background-color: rgb(213, 213, 213);
 		border-radius: 1.5em;
 		padding: 1em;
-		text-decoration: none;
 		color: black;
 		border: 1px solid black;
-		transition: transform 0.175s ease-in-out;
-	}
-	
-	.card:hover{
-		transform: scale(1.1);
 	}
 	
 	.card h3{
@@ -49,19 +47,13 @@
 	}
 	
 	.card img{
-		display: inline-block;
+		display: block;
 		margin: 0 auto;
 	}
 	
 	.card p{
 		margin: 0;
 		font-size: 1em;
-	}
-	
-	.card span{
-		grid-row: 4;
-		text-align: right;
-		padding-top: 0.5em;
 	}
 	
 	.card div{

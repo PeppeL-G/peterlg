@@ -1,6 +1,6 @@
 <script>
 	
-	import { isCurrentLink } from "../actions/isCurrentLink.js"
+	import Link from "$lib/Link.svelte"
 	
 	const links = [
 		{text: "Start", url: "/"},
@@ -11,12 +11,9 @@
 
 <nav>
 	{#each links as link}
-		<a
-			href="{link.url}"
-			use:isCurrentLink
-		>
+		<Link href={link.url}>
 			{link.text}
-		</a>
+		</Link>
 	{/each}
 </nav>
 

@@ -1,5 +1,7 @@
 <script>
 	
+	import { base } from '$app/paths'
+	
 	/** @type {import('./$types').PageData} */
 	export let data
 	
@@ -11,7 +13,7 @@
 
 <h1>{project.title}</h1>
 <img
-	src={`/projects/${project.id}.png`}
+	src={`${base}/projects/${project.id}.png`}
 	alt="Project."
 >
 <p class="introduction">

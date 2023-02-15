@@ -1,6 +1,11 @@
 <h1>Changelog</h1>
 <p>This changelog follow the <a href="https://semver.org/" target="_blank">SemVer</a> convention.</p>
 
+<h2><span class="version">1.1.0</span> <span class="date">2023-02-15</span></h2>
+<ul>
+	<li>Made it deployable to <a href="https://pages.github.com/" target="_blank">GitHub Pages</a></li>
+</ul>
+
 <h2><span class="version">1.0.0</span> <span class="date">2023-02-12</span></h2>
 <ul>
 	<li>Added start page with latest project</li>

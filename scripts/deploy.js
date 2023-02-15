@@ -10,12 +10,16 @@ const commands = [
 	
 	// Commit it.
 	'cd ./build/',
-	'git init',
+	'git init -b master',
 	'git add -A',
 	'git commit -m "New deploy."',
 	
 	// Push it.
 	'git push -f https://github.com/PeppeL-G/peterlg.git master:github-pages',
+	
+	// Remove build.
+	'cd ..',
+	'rm -rf build'
 	
 ]
 

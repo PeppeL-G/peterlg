@@ -10,20 +10,7 @@ html, body{
 
 a{
 	color: black;
-}
-
-a:not([target="_blank"]){
-	display: inline-block;
-	padding: 0.5em;
-}
-
-a:not([target="_blank"]):hover{
-	transform: scale(1.2);
-}
-
-a.isCurrent{
-	font-weight: bold;
-	transform: scale(1.2);
+	transition: transform 0.2s;
 }
 
 h1{

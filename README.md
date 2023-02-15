@@ -10,4 +10,5 @@ This repository contains the source code for the website [peterlg.se](http://pet
 
 ## Publish new version
 1. `cd peterlg`
-2. `npm run deploy`
+2. `npm install`
+3. `npm run deploy`
