@@ -13,7 +13,7 @@
 	</div>
 	<div class="links">
 		<Link href="/about">About</Link>
-		<Link href="/changelog">v1.1.0</Link>
+		<Link href="/changelog">v1.1.1</Link>
 	</div>
 </footer>
 

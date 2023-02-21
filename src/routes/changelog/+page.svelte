@@ -1,6 +1,11 @@
 <h1>Changelog</h1>
 <p>This changelog follow the <a href="https://semver.org/" target="_blank">SemVer</a> convention.</p>
 
+<h2><span class="version">1.1.1</span> <span class="date">2023-02-21</span></h2>
+<ul>
+	<li>Changed it so it runs on <a href="https://peterlg.se/" target="_blank">peterlg.se</a> instead of <a href="https://peppel-g.github.io/peterlg" target="_blank">peppel-g.github.io/peterlg</a></li>
+</ul>
+
 <h2><span class="version">1.1.0</span> <span class="date">2023-02-15</span></h2>
 <ul>
 	<li>Made it deployable to <a href="https://pages.github.com/" target="_blank">GitHub Pages</a></li>
