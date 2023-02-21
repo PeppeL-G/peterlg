@@ -2,7 +2,6 @@
 	export let href = ""
 	export let removeUnderline = false
 	
-	import { base } from '$app/paths'
 	import { page } from "$app/stores"
 	
 	$: isCurrent = getIsCurrent($page)
@@ -13,8 +12,8 @@
 		
 		// Give start page special treatment.
 		if(href == "/"){
-			return (currentUrl == base+"/")
-		}else if(currentUrl.startsWith(base+href)){
+			return (currentUrl == "/")
+		}else if(currentUrl.startsWith(href)){
 			return true
 		}else{
 			return false
@@ -25,7 +24,7 @@
 </script>
 
 <a
-	href={base+href}
+	{href}
 	class:isCurrent
 	class:removeUnderline
 >

@@ -8,9 +8,6 @@ const config = {
 			data: 'src/data',
 			assets: 'src/assets',
 		},
-		paths: {
-			base: '/peterlg',
-		},
 	},
 }
 

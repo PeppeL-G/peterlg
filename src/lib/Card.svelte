@@ -9,14 +9,13 @@
 	
 	import Link from "./Link.svelte"
 	import Tag from "./Tag.svelte"
-	import { base } from "$app/paths"
 	
 </script>
 
 <Link href={url} removeUnderline>
 	<div class="card">
 		<h3>{title}</h3>
-		<img src={base+imageUrl} alt="Card.">
+		<img src={imageUrl} alt="Card.">
 		<p>{content}</p>
 		<time datetime={date}>{date}</time>
 		<div>
