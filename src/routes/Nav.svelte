@@ -5,6 +5,7 @@
 	const links = [
 		{text: "Start", url: "/"},
 		{text: "Projects", url: "/projects"},
+		{text: "Speedruns", url: "/speedruns"},
 	]
 	
 </script>
