@@ -6,6 +6,11 @@ export const games = [{
 	consoleName: "SNES",
 	speedruns: [{
 		consoleName: "Switch",
+		date: "2023-02-26",
+		time: Temporal.Duration.from({hours: 1, minutes: 10, seconds: 21}),
+		comment: `I think I died like 20 times, but only 3 times on King K. Rool, so good progress since last play :)`,
+	}, {
+		consoleName: "Switch",
 		date: "2023-02-20",
 		time: Temporal.Duration.from({hours: 1, minutes: 18, seconds: 35}),
 		comment: `Died many times, and way too many times on King K. Rool than I want to admit xD But no game over 8)`,
