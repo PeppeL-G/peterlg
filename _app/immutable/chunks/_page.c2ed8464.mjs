@@ -1,0 +1,1 @@
+import{p as e}from"./projects.f0821b47.mjs";import{H as n}from"./control.e7f5239e.mjs";function i(r,o){return new n(r,o)}new TextEncoder;function p({params:r}){const o=e.find(t=>t.id==r.id);if(!o)throw i(404,"Not found");return{project:o}}const a=Object.freeze(Object.defineProperty({__proto__:null,load:p},Symbol.toStringTag,{value:"Module"}));export{a as _,p as l};

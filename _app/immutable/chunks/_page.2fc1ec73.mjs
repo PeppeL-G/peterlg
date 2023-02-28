@@ -1,0 +1,1 @@
+import{p as e}from"./projects.f0821b47.mjs";function t(){return{newestProject:e[0]}}const n=Object.freeze(Object.defineProperty({__proto__:null,load:t},Symbol.toStringTag,{value:"Module"}));export{n as _,t as l};
