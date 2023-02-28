@@ -21,6 +21,11 @@ export const games = [{
 	consoleName: "NES",
 	speedruns: [{
 		consoleName: "Switch",
+		date: "2023-02-28",
+		time: Temporal.Duration.from({minutes: 7, seconds: 58}),
+		comment: `Died two times on 1-2, and 2 times on 8-3, but managed to beat the final level on first try 8)`,
+	}, {
+		consoleName: "Switch",
 		date: "2023-02-22",
 		time: Temporal.Duration.from({minutes: 10, seconds: 47}),
 		comment: `Gathered all extra lives I knew, and lucky was that, because I needed all of them xD Died 3-4 times on the final level, and a few times on 8-2 and 8-3, and got small on 4-2 :(`,
