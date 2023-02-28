@@ -1,4 +1,10 @@
 export const changelogEntries = [{
+	version: "1.4.0",
+	date: "2023-02-28",
+	changeDescriptions: [
+		`Added speedrun`,
+	],
+}, {
 	version: "1.3.0",
 	date: "2023-02-26",
 	changeDescriptions: [
