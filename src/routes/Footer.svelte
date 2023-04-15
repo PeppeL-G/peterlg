@@ -1,8 +1,7 @@
 <script>
-	import Link from "$lib/Link.svelte"
-	
-	const year = new Date().getFullYear()
-	
+	import Link from "$lib/Link.svelte";
+
+	const year = new Date().getFullYear();
 </script>
 
 <footer>
@@ -18,8 +17,7 @@
 </footer>
 
 <style>
-	
-	footer{
+	footer {
 		border: 1px solid black;
 		border-radius: 1em;
 		padding: 0.5em 1em;
@@ -29,18 +27,12 @@
 		width: 75%;
 		overflow: hidden;
 	}
-	
-	a{
-		color: black;
-		font-size: 120%;
-	}
-	
-	.text{
+
+	.text {
 		line-height: 1.25;
 	}
-	
-	.text span{
+
+	.text span {
 		white-space: nowrap;
 	}
-	
 </style>
