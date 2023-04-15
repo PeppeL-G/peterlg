@@ -1,16 +1,24 @@
 <script>
-	
 	/** @type {import('./$types').PageData} */
-	export let data
-	
-	const {
-		speedruns,
-	} = data
-	
+	export let data;
+
+	const { speedruns } = data;
 </script>
 
 <h1>Speedruns</h1>
-<p>I sometimes play video games, and since I have a quite bad memory I somewhere want to have a list of which games I have finished. And what better place than on this website? And some games I enjoy playing so much that I play them multiple times, and then they are even more fun to speedrun them, so here you can also see my records. Be impressed! 😎</p>
+<p>
+	I sometimes play video games, and since I have a quite bad memory I somewhere
+	want to have a list of which games I have finished. And what better place than
+	on this website? And some games I enjoy playing so much that I play them
+	multiple times, and then they are even more fun to speedrun them, so here you
+	can also see my records. Be impressed! 😎
+</p>
+
+<p>
+	The time <code>??:??:??</code> means that I finished the game without measuring
+	how long time it took, most likely because I needed to play it over a long period
+	of time (several days, sometimes several weeks).
+</p>
 
 <div class="speedruns">
 	<table border={1}>
@@ -29,7 +37,12 @@
 					<td>{speedrun.date}</td>
 					<td>{speedrun.game.name}</td>
 					<td>
-						{speedrun.time.hours}:{speedrun.time.minutes}:{speedrun.time.seconds}
+						{#if speedrun.time.hours == 999}
+							??:??:??
+						{:else}
+							{speedrun.time.hours}:{speedrun.time.minutes}:{speedrun.time
+								.seconds}
+						{/if}
 					</td>
 					<td>{speedrun.game.consoleName}</td>
 					<td>{speedrun.consoleName}</td>
@@ -40,20 +53,18 @@
 </div>
 
 <style>
-	
-	.speedruns{
+	.speedruns {
 		white-space: nowrap;
 		overflow: auto;
 		text-align: center;
 	}
-	
-	.speedruns table{
+
+	.speedruns table {
 		margin: 0 auto;
 	}
-	
+
 	.speedruns th,
-	.speedruns td{
+	.speedruns td {
 		padding: 0.25em;
 	}
-	
 </style>
