@@ -1,5 +1,6 @@
 <script>
 	import Link from "$lib/Link.svelte";
+	import { changelogEntries } from "data/changelog-entries.js";
 
 	const year = new Date().getFullYear();
 </script>
@@ -12,7 +13,7 @@
 	</div>
 	<div class="links">
 		<Link href="/about">About</Link>
-		<Link href="/changelog">v1.5.0</Link>
+		<Link href="/changelog">v{changelogEntries[0].version}</Link>
 	</div>
 </footer>
 
