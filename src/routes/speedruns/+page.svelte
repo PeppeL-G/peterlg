@@ -3,6 +3,18 @@
 	export let data;
 
 	const { speedruns } = data;
+
+	function speedrunTimeToString(time) {
+		if (time.hours == 999) {
+			return `??:??:??`;
+		}
+
+		const hh = time.hours.toString().padStart(2, "0");
+		const mm = time.minutes.toString().padStart(2, "0");
+		const ss = time.seconds.toString().padStart(2, "0");
+
+		return `${hh}:${mm}:${ss}`;
+	}
 </script>
 
 <h1>Speedruns</h1>
@@ -37,12 +49,9 @@
 					<td>{speedrun.date}</td>
 					<td>{speedrun.game.name}</td>
 					<td>
-						{#if speedrun.time.hours == 999}
-							??:??:??
-						{:else}
-							{speedrun.time.hours}:{speedrun.time.minutes}:{speedrun.time
-								.seconds}
-						{/if}
+						<code>
+							{speedrunTimeToString(speedrun.time)}
+						</code>
 					</td>
 					<td>{speedrun.game.consoleName}</td>
 					<td>{speedrun.consoleName}</td>
