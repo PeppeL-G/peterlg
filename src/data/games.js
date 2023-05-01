@@ -1,6 +1,31 @@
 import { Temporal } from "@js-temporal/polyfill"
 
 export const games = [{
+	id: "super-mario-world",
+	name: "Super Mario World",
+	consoleName: "SNES",
+	speedruns: [{
+		consoleName: "Switch",
+		date: "2023-05-01",
+		time: Temporal.Duration.from({ hours: 999, minutes: 0, seconds: 0 }),
+		comment: `Finished the game to 100%.`,
+	}, {
+		consoleName: "Switch",
+		date: "2023-04-25",
+		time: Temporal.Duration.from({ hours: 999, minutes: 0, seconds: 0 }),
+		comment: `Finished the game (beat final boss).`,
+	}],
+}, {
+	id: "donkey-kong-country-3",
+	name: "Donkey Kong Country 3",
+	consoleName: "SNES",
+	speedruns: [{
+		consoleName: "Switch",
+		date: "2023-04-17",
+		time: Temporal.Duration.from({ hours: 999, minutes: 0, seconds: 0 }),
+		comment: `Finished the game (all courses + all bosses except Lost World).`,
+	}],
+}, {
 	id: "zelda-2-the-adventure-of-link",
 	name: "Zelda II: The Adventure of Link",
 	consoleName: "NES",
