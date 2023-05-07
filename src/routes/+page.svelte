@@ -2,8 +2,18 @@
 	
 	import Card from "$lib/Card.svelte"
 	import { projects } from "data/projects.js"
+	import { speedruns } from "data/speedruns.js"
+	import { games } from "data/games";
+	import { speedrunTimeToString } from "functions/speedrun-time-to-string.js"
 	
 	const newestProject = projects[0]
+	const newestSpeedrun = speedruns[0]
+	const newestSpeedrunGame = games.find(
+		g => g.id == newestSpeedrun.gameId,
+	)
+	const newestSpeedrunCategory = newestSpeedrunGame.categories.find(
+		c => c.id == newestSpeedrun.categoryId,
+	)
 	
 </script>
 
@@ -15,6 +25,17 @@
 	<h2>Newest updates</h2>
 	
 	<div class="items">
+		
+		<div>
+			<Card
+				url="/speedruns/{newestSpeedrunGame.id}"
+				title={newestSpeedrunGame.name}
+				content="Speedrun {newestSpeedrunCategory.name} in {speedrunTimeToString(newestSpeedrun.time)}."
+				tagNames={['newest', 'speedrun']}
+				imageUrl={`/speedrun-icon.png`}
+				date={newestSpeedrun.date}
+			/>
+		</div>
 		
 		<div>
 			<Card
@@ -40,13 +61,12 @@
 	#newest .items{
 		display: flex;
 		flex-wrap: wrap;
-		justify-content: space-around;
+		justify-content: space-evenly;
 	}
 	
 	#newest .items div{
 		flex-basis: 30%;
+		flex-grow: 0;
 	}
-	
-	
 	
 </style>

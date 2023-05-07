@@ -40,7 +40,7 @@
 	
 	.card h3{
 		text-align: center;
-		padding-bottom: 0.5em;
+		padding-bottom: 0.1em;
 		margin: 0;
 		font-size: 1.5em;
 	}
@@ -48,11 +48,17 @@
 	.card img{
 		display: block;
 		margin: 0 auto;
+		max-width: min(100%, 144px);
 	}
 	
 	.card p{
 		margin: 0;
+		margin-bottom: 0.5em;
 		font-size: 1em;
+	}
+	
+	.card time{
+		margin-bottom: 0.25em;
 	}
 	
 	.card div{
