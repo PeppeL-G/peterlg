@@ -1,4 +1,14 @@
 export const changelogEntries = [{
+	version: "1.7.0",
+	date: "2023-05-07",
+	changeDescriptions: [
+		`Restructured speedruns data`,
+		`Added the <code>activateOnSubMatch</code> props to <code>Link</code>`,
+		`Delete the <code>+page.js</code> files (data now loaded directly in the <code>+page.svelte</code> files instead)`,
+		`Added the game page`,
+		`Show latest speedrun on start page`,
+	],
+}, {
 	version: "1.6.0",
 	date: "2023-05-01",
 	changeDescriptions: [
