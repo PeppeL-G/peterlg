@@ -10,7 +10,7 @@
 
 <nav>
 	{#each links as link}
-		<Link href={link.url}>
+		<Link href={link.url} activateOnSubMatch={link.url != "/"}>
 			{link.text}
 		</Link>
 	{/each}

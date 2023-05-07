@@ -1,6 +1,7 @@
 <script>
 	export let href = ""
 	export let removeUnderline = false
+	export let activateOnSubMatch = true
 	
 	import { page } from "$app/stores"
 	
@@ -10,10 +11,9 @@
 		
 		const currentUrl = p.url.pathname
 		
-		// Give start page special treatment.
-		if(href == "/"){
-			return (currentUrl == "/")
-		}else if(currentUrl.startsWith(href)){
+		if(currentUrl == href){
+			return true
+		}else if(activateOnSubMatch && currentUrl.startsWith(href)){
 			return true
 		}else{
 			return false

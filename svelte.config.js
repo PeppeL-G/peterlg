@@ -6,6 +6,7 @@ const config = {
 		adapter: adapter(),
 		alias: {
 			data: 'src/data',
+			functions: 'src/functions',
 			assets: 'src/assets',
 		},
 	},

@@ -1,13 +1,9 @@
 <script>
 	
 	import Card from "$lib/Card.svelte"
+	import { projects } from "data/projects.js"
 	
-	/** @type {import('./$types').PageData} */
-	export let data
-	
-	const {
-		newestProject,
-	} = data
+	const newestProject = projects[0]
 	
 </script>
 

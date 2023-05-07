@@ -1,9 +1,80 @@
-import { games } from "./games.js"
+import { Temporal } from "@js-temporal/polyfill"
 
-export const speedruns = games.flatMap(
-	g => g.speedruns,
-)
-
-speedruns.sort(
-	(a, b) => b.date.localeCompare(a.date)
-)
+export const speedruns = [{
+	gameId: "super-mario-world",
+	consoleName: "Switch",
+	date: "2023-05-01",
+	time: Temporal.Duration.from({ hours: 999, minutes: 0, seconds: 0 }),
+	comment: `Finished the game to 100%.`,
+	categoryId: "100",
+}, {
+	gameId: "super-mario-world",
+	consoleName: "Switch",
+	date: "2023-04-25",
+	time: Temporal.Duration.from({ hours: 999, minutes: 0, seconds: 0 }),
+	comment: `Finished the game (beat final boss).`,
+	categoryId: "any",
+}, {
+	gameId: "donkey-kong-country-3",
+	consoleName: "Switch",
+	date: "2023-04-17",
+	time: Temporal.Duration.from({ hours: 999, minutes: 0, seconds: 0 }),
+	comment: `Finished the game (all courses + all bosses except Lost World).`,
+	categoryId: "any",
+}, {
+	gameId: "zelda-2-the-adventure-of-link",
+	consoleName: "Switch",
+	date: "2023-04-11",
+	time: Temporal.Duration.from({ hours: 999, minutes: 0, seconds: 0 }),
+	comment: `Finished the game (all temples + final boss).`,
+	categoryId: "any",
+	}, {
+	gameId: "yoshis-island",
+	consoleName: "Switch",
+	date: "2023-04-10",
+	time: Temporal.Duration.from({ hours: 999, minutes: 0, seconds: 0 }),
+	comment: `Finished the game to 100%.`,
+	categoryId: "100",
+}, {
+	gameId: "the-legend-of-zelda",
+	consoleName: "Switch",
+	date: "2023-03-30",
+	time: Temporal.Duration.from({ hours: 999, minutes: 0, seconds: 0 }),
+	comment: `Finished the game (all temples + final boss).`,
+	categoryId: "any",
+}, {
+	gameId: "yoshis-island",
+	consoleName: "Switch",
+	date: "2023-03-05",
+	time: Temporal.Duration.from({ hours: 999, minutes: 0, seconds: 0 }),
+	comment: `Finished the game (beat the final boss).`,
+	categoryId: "any",
+	}, {
+	gameId: "super-mario-bros",
+	consoleName: "Switch",
+	date: "2023-02-28",
+	time: Temporal.Duration.from({ minutes: 7, seconds: 58 }),
+	comment: `Died two times on 1-2, and 2 times on 8-3, but managed to beat the final level on first try 8)`,
+	categoryId: "any",
+}, {
+	gameId: "donkey-kong-country",
+	consoleName: "Switch",
+	date: "2023-02-26",
+	time: Temporal.Duration.from({ hours: 1, minutes: 10, seconds: 21 }),
+	comment: `I think I died like 20 times, but only 3 times on King K. Rool, so good progress since last play :)`,
+	categoryId: "any",
+}, {
+	gameId: "super-mario-bros",
+	consoleName: "Switch",
+	date: "2023-02-22",
+	time: Temporal.Duration.from({ minutes: 10, seconds: 47 }),
+	comment: `Gathered all extra lives I knew, and lucky was that, because I needed all of them xD Died 3-4 times on the final level, and a few times on 8-2 and 8-3, and got small on 4-2 :(`,
+	categoryId: "any",
+}, {
+	gameId: "donkey-kong-country",
+	consoleName: "Switch",
+	date: "2023-02-20",
+	time: Temporal.Duration.from({ hours: 1, minutes: 18, seconds: 35 }),
+	comment: `Died many times, and way too many times on King K. Rool than I want to admit xD But no game over 8)`,
+	categoryId: "any",
+}]
