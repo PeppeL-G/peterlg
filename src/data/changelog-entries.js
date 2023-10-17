@@ -1,4 +1,10 @@
 export const changelogEntries = [{
+	version: "?.?.?",
+	date: "????-??-??",
+	changeDescriptions: [
+		`Updated npm dependencies to newer versions`,
+	],
+}, {
 	version: "1.7.0",
 	date: "2023-05-07",
 	changeDescriptions: [
