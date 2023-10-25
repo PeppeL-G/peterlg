@@ -1,3 +1,6 @@
+@import url(../../node_modules/prism-themes/themes/prism-vs.min.css) screen;
+@import "../../node_modules/prism-themes/themes/prism-vsc-dark-plus.min.css" screen and (prefers-color-scheme: dark);
+
 html, body{
 	margin: 0;
 	padding: 0;

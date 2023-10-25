@@ -4,6 +4,7 @@
 	const links = [
 		{ text: "Start", url: "/" },
 		{ text: "Projects", url: "/projects" },
+		{ text: "Blogposts", url: "/blogposts" },
 		{ text: "Speedruns", url: "/speedruns" },
 	];
 </script>

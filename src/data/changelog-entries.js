@@ -3,6 +3,8 @@ export const changelogEntries = [{
 	date: "????-??-??",
 	changeDescriptions: [
 		`Updated npm dependencies to newer versions`,
+		`Added mdsvex`,
+		`Added blogposts/blogpost page, and wrote the first blogpost`,
 	],
 }, {
 	version: "1.7.0",

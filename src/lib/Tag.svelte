@@ -4,6 +4,7 @@
 	colorsByName.set("newest", "rgba(0, 255, 0, 0.5)")
 	colorsByName.set("project", "rgba(0, 255, 255, 0.5)")
 	colorsByName.set("speedrun", "rgba(255, 255, 0, 0.5)")
+	colorsByName.set("blogpost", "rgba(255, 0, 255, 0.5)")
 	
 </script>
 
