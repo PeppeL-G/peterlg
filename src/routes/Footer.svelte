@@ -3,6 +3,11 @@
 	import { changelogEntries } from "data/changelog-entries.js";
 
 	const year = new Date().getFullYear();
+	
+	const lastEntry = changelogEntries.find(
+		e => 0 < e.changeDescriptions.length,
+	)
+	
 </script>
 
 <footer>
@@ -13,7 +18,7 @@
 	</div>
 	<div class="links">
 		<Link href="/about">About</Link>
-		<Link href="/changelog">v{changelogEntries[0].version}</Link>
+		<Link href="/changelog">v{lastEntry.version}</Link>
 	</div>
 </footer>
 
