@@ -2,6 +2,7 @@
 	import Header from "./Header.svelte"
 	import Nav from "./Nav.svelte"
 	import Footer from "./Footer.svelte"
+	import "./global.css"
 </script>
 
 <div class="layout">

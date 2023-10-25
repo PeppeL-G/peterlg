@@ -1,6 +1,12 @@
 export const changelogEntries = [{
-	version: "?.?.?",
-	date: "????-??-??",
+	version: "1.8.1",
+	date: "2023-10-25",
+	changeDescriptions: [
+		`Fixed CSS in production error (import from node_modules)`,
+	],
+}, {
+	version: "1.8.0",
+	date: "2023-10-25",
 	changeDescriptions: [
 		`Updated npm dependencies to newer versions`,
 		`Added mdsvex`,
