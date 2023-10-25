@@ -1,11 +1,17 @@
 <script>
+	
 	import { changelogEntries } from "data/changelog-entries.js"
+	
+	const entries = changelogEntries.filter(
+		e => 0 < e.changeDescriptions.length,
+	)
+	
 </script>
 
 <h1>Changelog</h1>
 <p>This changelog follow the <a href="https://semver.org/" target="_blank">SemVer</a> convention.</p>
 
-{#each changelogEntries as entry}
+{#each entries as entry}
 	
 	<h2>
 		<span class="version">{entry.version}</span>

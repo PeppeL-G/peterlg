@@ -1,4 +1,8 @@
 export const changelogEntries = [{
+	version: "?.?.?",
+	date: "????-??-??",
+	changeDescriptions: [],
+}, {
 	version: "1.8.1",
 	date: "2023-10-25",
 	changeDescriptions: [
