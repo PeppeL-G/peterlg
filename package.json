@@ -19,6 +19,8 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@js-temporal/polyfill": "^0.4.3"
+		"@js-temporal/polyfill": "^0.4.3",
+		"mdsvex": "^0.11.0",
+		"prism-themes": "^1.9.0"
 	}
 }
