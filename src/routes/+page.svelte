@@ -74,19 +74,19 @@
 	
 </div>
 
-<style>
+<style>	
 	
 	.cards{
 		display: grid;
 		grid-template-rows: auto auto 1fr auto auto auto;
-		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-columns: repeat(auto-fit, minmax(10em, 1fr));
 		gap: 1em;
 		padding: 1em;
 	}
 	
 	.cards > :global(*){
 		display: grid;
-		grid-row: 1 / span 6;
+		grid-row: span 6;
 		grid-template-rows: subgrid;
 		grid-gap: 0;
 		background-color: rgb(213, 213, 213);
