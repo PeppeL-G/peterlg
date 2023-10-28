@@ -1,8 +1,8 @@
 <script>
 	
-	import { base } from '$app/paths'
 	import { page } from '$app/stores';
 	import { projects } from 'data/projects.js'
+	import Image from '$lib/Image.svelte'
 	
 	$: project = projects.find(
 		p => p.id == $page.params.id
@@ -18,10 +18,13 @@
 {:else}
 	
 	<h1>{project.title}</h1>
-	<img
-		src={`${base}/projects/${project.id}.png`}
-		alt="Project."
-	>
+	<div class="image">
+		<Image
+			src={`/projects/${project.id}.png`}
+			alt="Project."
+			id="main"
+		/>
+	</div>
 	<p class="introduction">
 		{project.introduction}
 		<span class="posted">
@@ -46,7 +49,7 @@
 		margin-top: 0.3em;
 	}
 	
-	img{
+	.image{
 		float: right;
 	}
 	

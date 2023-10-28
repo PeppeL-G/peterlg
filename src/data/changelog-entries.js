@@ -2,7 +2,8 @@ export const changelogEntries = [{
 	version: "?.?.?",
 	date: "????-??-??",
 	changeDescriptions: [
-		`Improved GUI on start page`
+		`Improved GUI on start page`,
+		`Made images fullscreen when clicked`,
 	],
 }, {
 	version: "1.8.1",

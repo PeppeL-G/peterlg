@@ -2,6 +2,7 @@
 	
 	import { page } from '$app/stores';
 	import { blogposts } from 'data/blogposts.js'
+	import Image from '$lib/Image.svelte'
 	
 	$: blogpost = blogposts.find(
 		b => b.id == $page.params.id
@@ -12,10 +13,13 @@
 {#if blogpost}
 	
 	<h1>{blogpost.title}</h1>
-	<img
-		src={`/blogposts/${blogpost.id}.png`}
-		alt="Blogpost."
-	>
+	<div class="image">
+		<Image
+			src={`/blogposts/${blogpost.id}.png`}
+			alt="Blogpost."
+			id="main"
+		/>
+	</div>
 	<p class="introduction">
 		{blogpost.summary}
 		<span class="posted">
@@ -46,7 +50,7 @@
 		margin-top: 0.3em;
 	}
 	
-	img{
+	.image{
 		float: right;
 		max-width: 50%;
 		margin: 3%;
