@@ -1,11 +1,15 @@
-@import url(../../node_modules/prism-themes/themes/prism-vs.min.css) screen;
-@import "../../node_modules/prism-themes/themes/prism-vsc-dark-plus.min.css" screen and (prefers-color-scheme: dark);
+@import url("../../node_modules/prism-themes/themes/prism-vs.min.css") screen;
+@import url("../../node_modules/prism-themes/themes/prism-vsc-dark-plus.min.css") screen and (prefers-color-scheme: dark);
 
 html,
 body {
 	margin: 0;
 	padding: 0;
 	height: 100%;
+}
+
+body{
+	background-color: #afafaf;
 }
 
 * {
@@ -19,10 +23,7 @@ a {
 
 h1 {
 	margin: 0 0 0 0;
-}
-
-h2 {
-	margin: 0 0 0.2em 0;
+	text-align: center;
 }
 
 p {

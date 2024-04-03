@@ -1,19 +1,18 @@
 <script>
-	import Link from "$lib/Link.svelte";
-
-	const links = [
-		{ text: "Start", url: "/" },
-		{ text: "Projects", url: "/projects" },
-		{ text: "Blogposts", url: "/blogposts" },
-		{ text: "Speedruns", url: "/speedruns" },
-	];
+	import MainLink from "$lib/MainLink.svelte"
+	import { mainPages } from "data/main-pages.js"
+	
+	const navbarPages = mainPages.filter(
+		p => p.where == `navbar`,
+	)
+	
 </script>
 
 <nav>
-	{#each links as link}
-		<Link href={link.url} activateOnSubMatch={link.url != "/"}>
-			{link.text}
-		</Link>
+	{#each navbarPages as page}
+		<MainLink href={page.url}>
+			{page.name}
+		</MainLink>
 	{/each}
 </nav>
 
@@ -25,5 +24,6 @@
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
+		margin: 0 1em;
 	}
 </style>

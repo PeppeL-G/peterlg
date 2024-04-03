@@ -8,7 +8,6 @@
 	
 </script>
 
-<h1>Changelog</h1>
 <p>This changelog follow the <a href="https://semver.org/" target="_blank">SemVer</a> convention.</p>
 
 {#each entries as entry}

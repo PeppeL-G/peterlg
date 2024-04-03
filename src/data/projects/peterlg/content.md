@@ -1,0 +1,3 @@
+*peterlg* is my personal website. It is implemented as a <a href="https://kit.svelte.dev/" target="_blank">SvelteKit</a> project with <a href="https://kit.svelte.dev/docs/adapter-static" target="_blank">the Static-Site Generator adapter</a>, so even though being dynamic, all routes are pre-rendered and available as static pages. And the result is this website that you currently see 🙂 It is hosted on <a href="https://pages.github.com/" target="_blank">GitHub Pages</a> with the custom domain <code>peterlg.se</code>.
+
+The incredible beautiful logo is the <a href="https://en.wikipedia.org/wiki/Mii" target="_blank">Mii</a> character I use when I play games on Nintendo's consoles.

@@ -3,13 +3,13 @@ export const games = [{
 	name: "Super Mario World",
 	consoleName: "SNES",
 	categories: [{
-		id: "100",
-		name: "100%",
-		description: `Beat all levels (all exits), all bosses, all switches, the star world and the special zone.`,
-	}, {
 		id: "any",
 		name: "Any%",
 		description: `Beat the final boss.`,
+	}, {
+		id: "100",
+		name: "100%",
+		description: `Beat all levels (all exits), all bosses, all switches, the star world and the special zone.`,
 	}],
 }, {
 	id: "donkey-kong-country-3",
@@ -43,13 +43,13 @@ export const games = [{
 	name: "Yoshi's Island",
 	consoleName: "SNES",
 	categories: [{
-		id: "100",
-		name: "100%",
-		description: `Beat all levels (including the extra levels), and get 100% in each level (30 stars + 20 red coins + 5 flowers).`,
-	}, {
 		id: "any",
 		name: "Any%",
 		description: `Beat the final boss.`,
+	}, {
+		id: "100",
+		name: "100%",
+		description: `Beat all levels (including the extra levels), and get 100% in each level (30 stars + 20 red coins + 5 flowers).`,
 	}],
 }, {
 	id: "donkey-kong-country",

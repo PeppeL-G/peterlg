@@ -1,19 +1,20 @@
 <script>
 	
 	export let url = ""
+	export let id = ""
 	export let title = ""
 	export let content = ""
-	export let tagNames = []
+	export let tagNames = [""].slice(1)
 	export let imageUrl = ""
 	export let date = ""
 	
-	import Link from "./Link.svelte"
+	import SubLink from "./SubLink.svelte"
 	import Tag from "./Tag.svelte"
 	
 </script>
 
-<Link href={url} removeUnderline>
-	<div class="card">
+<div class="card">
+	<SubLink href={url} {id}>
 		<h3>{title}</h3>
 		<img src={imageUrl} alt="Card.">
 		<p>{content}</p>
@@ -23,48 +24,60 @@
 				<Tag name={tagName} />
 			{/each}
 		</div>
-	</div>
-</Link>
+	</SubLink>
+</div>
 
 <style>
 	
 	.card{
-		display: grid;
-		grid-template-rows: auto 1fr auto auto;
-		background-color: rgb(213, 213, 213);
-		border-radius: 1.5em;
-		padding: 1em;
-		color: black;
-		border: 1px solid black;
-	}
-	
-	.card h3{
-		text-align: center;
-		padding-bottom: 0.1em;
-		margin: 0;
-		font-size: 1.5em;
-	}
-	
-	.card img{
-		display: block;
-		margin: 0 auto;
-		max-width: min(100%, 144px);
-	}
-	
-	.card p{
-		margin: 0;
-		margin-bottom: 0.5em;
-		font-size: 1em;
-	}
-	
-	.card time{
-		margin-bottom: 0.25em;
-	}
-	
-	.card div{
-		display: flex;
-		justify-content: right;
-		gap: 0.5em;
+		
+		display: contents;
+		
+		& > *{
+			
+			display: grid;
+			grid-row: span 5;
+			grid-template-rows: subgrid;
+			align-items: center;
+			grid-gap: 0;
+			
+			background-color: rgb(213, 213, 213);
+			border-radius: 1.5em;
+			padding: 1em;
+			color: black;
+			border: 1px solid black;
+			
+			& h3{
+				text-align: center;
+				margin: 0;
+				padding: 0;
+				font-size: 1.5em;
+			}
+			
+			& img{
+				display: block;
+				margin: 0 auto;
+				max-width: 80%;
+			}
+			
+			& p{
+				margin: 0.25em 0;
+				font-size: 1em;
+				align-self: center;
+			}
+			
+			& time{
+				margin-bottom: 0.25em;
+			}
+			
+			& div{
+				display: flex;
+				justify-content: right;
+				gap: 0.5em;
+			}
+			
+		}
+		
 	}
 	
 </style>

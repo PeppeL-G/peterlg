@@ -1,11 +1,11 @@
 <script>
-	import Link from "$lib/Link.svelte";
-	import { changelogEntries } from "data/changelog-entries.js";
-
+	import MainLink from "$lib/MainLink.svelte"
+	import { mainPages } from "data/main-pages.js"
+	
 	const year = new Date().getFullYear();
 	
-	const lastEntry = changelogEntries.find(
-		e => 0 < e.changeDescriptions.length,
+	const footerPages = mainPages.filter(
+		p => p.where == `footer`,
 	)
 	
 </script>
@@ -17,8 +17,11 @@
 		<span>Peter Larsson-Green</span>
 	</div>
 	<div class="links">
-		<Link href="/about">About</Link>
-		<Link href="/changelog">v{lastEntry.version}</Link>
+		{#each footerPages as page}
+			<MainLink href="{page.url}">
+				{page.name}
+			</MainLink>
+		{/each}
 	</div>
 </footer>
 
