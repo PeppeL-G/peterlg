@@ -3,6 +3,7 @@ export const changelogEntries = [{
 	date: "????-??-??",
 	changeDescriptions: [
 		`Big redesign of the website, including page transitions, subpages shown in modals, clicking images to show them in fullscreen, and other minor improvements`,
+		`Added speedruns for a year back or so`,
 	],
 }, {
 	version: "1.8.1",
