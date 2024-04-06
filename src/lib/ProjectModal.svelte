@@ -29,7 +29,6 @@
 				<FullscreenableImage
 					src={`/projects/${project.id}.png`}
 					alt="Project."
-					id="main"
 				/>
 			</div>
 			

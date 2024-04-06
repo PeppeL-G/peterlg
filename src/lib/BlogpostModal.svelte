@@ -29,7 +29,6 @@
 				<FullscreenableImage
 					src={`/blogposts/${blogpost.id}.png`}
 					alt="Blogpost."
-					id="main"
 				/>
 			</div>
 			
