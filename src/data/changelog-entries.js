@@ -4,6 +4,7 @@ export const changelogEntries = [{
 	changeDescriptions: [
 		`Big redesign of the website, including page transitions, subpages shown in modals, clicking images to show them in fullscreen, and other minor improvements`,
 		`Added speedruns for a year back or so`,
+		`When closing modal, go back instead of pushing new history entry (if the web browser supports it)`,
 	],
 }, {
 	version: "1.8.1",

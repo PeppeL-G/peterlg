@@ -39,12 +39,39 @@
 		
 	}
 	
+	function onCloseAnchorClick(event){
+		
+		const previousEntryUrl = window.navigation?.entries()?.at(-2)?.url
+		
+		if(previousEntryUrl){
+			
+			const { href } = event.target
+			
+			console.log(href, previousEntryUrl)
+			
+			const regExpMatchSlashAtEnd = /\/$/
+			
+			if(
+				previousEntryUrl.replace(regExpMatchSlashAtEnd, ``) ==
+				href.replace(regExpMatchSlashAtEnd, ``)
+			){
+				
+				event.preventDefault()
+				window.history.back()
+				
+			}
+			
+		}
+		
+	}
+	
 </script>
 
 <a
 	class="background"
 	href={closeUrl}
 	transition:backgroundTransition
+	on:click={onCloseAnchorClick}
 ></a>
 
 <div
@@ -55,7 +82,7 @@
 	
 	<h1>{title}</h1>
 	
-	<a class="close" href={closeUrl}>
+	<a class="close" href={closeUrl} on:click={onCloseAnchorClick}>
 		<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
 			<line x1="20" y1="80" x2="80" y2="20" stroke="black" stroke-width="5" />
 			<line x1="20" y1="20" x2="80" y2="80" stroke="black" stroke-width="5" />
