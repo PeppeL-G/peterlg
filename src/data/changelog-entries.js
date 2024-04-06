@@ -1,6 +1,10 @@
 export const changelogEntries = [{
-	version: "?.?.?",
-	date: "????-??-??",
+	version: `?.?.?`,
+	date: `????-??-??`,
+	changeDescriptions: [],
+}, {
+	version: "1.9.0",
+	date: "2024-04-06",
 	changeDescriptions: [
 		`Big redesign of the website, including page transitions, subpages shown in modals, clicking images to show them in fullscreen, and other minor improvements`,
 		`Added speedruns for a year back or so`,
