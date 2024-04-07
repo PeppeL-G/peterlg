@@ -45,7 +45,7 @@ export const games = [{
 }, {
 	id: "ori-and-the-will-of-the-wisps",
 	name: "Ori and the Will of the Wisps",
-	consoleName: "Multiple",
+	consoleName: "Cross-Platform",
 	categories: [{
 		id: "any",
 		name: "Any%",
