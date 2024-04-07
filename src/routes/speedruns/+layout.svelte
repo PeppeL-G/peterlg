@@ -1,8 +1,38 @@
 <script>
+	
 	import { speedrunTimeToString } from 'functions/speedrun-time-to-string.js'
 	import { games } from 'data/games.js'
 	import { speedruns } from 'data/speedruns.js'
 	import SubLink from '$lib/SubLink.svelte'
+	import { pinch } from '../../actions/pinch.js'
+	
+	const pinchScaleFactor = 0.985
+	const minTableScalePercentages = 50
+	const maxTableScalePercentages = 100
+	let tableScalePercentages = maxTableScalePercentages
+	
+	function onPinch(lengthDifference){
+		
+		if(lengthDifference < 0){
+			
+			tableScalePercentages *= pinchScaleFactor
+			
+			if(tableScalePercentages < minTableScalePercentages){
+				tableScalePercentages = minTableScalePercentages
+			}
+			
+		}else{
+			
+			tableScalePercentages /= pinchScaleFactor
+			
+			if(maxTableScalePercentages < tableScalePercentages){
+				tableScalePercentages = maxTableScalePercentages
+			}
+			
+		}
+		
+	}
+	
 </script>
 
 <p>
@@ -20,7 +50,7 @@
 	over multiple days (sometimes several weeks).
 </p>
 
-<div class="table">
+<div class="table" use:pinch={{onPinch}} style:font-size="{tableScalePercentages}%">
 	
 	<div class="headerRow">
 		<div>Date Played</div>
