@@ -4,6 +4,7 @@ export const changelogEntries = [{
 	changeDescriptions: [
 		`Made it possible to pinch zoom the speedruns table on touch screens`,
 		`Added the project JSML`,
+		`Changed order of tags in cards`,
 	],
 }, {
 	version: "1.9.0",

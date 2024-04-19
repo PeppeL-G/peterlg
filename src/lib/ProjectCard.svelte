@@ -11,7 +11,7 @@
 	]
 	
 	if(project == projects[0]){
-		tagNames.push(`newest`)
+		tagNames.unshift(`newest`)
 	}
 	
 </script>

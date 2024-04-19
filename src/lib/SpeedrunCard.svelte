@@ -16,7 +16,7 @@
 	]
 	
 	if(speedrun == speedruns[0]){
-		tagNames.push(`newest`)
+		tagNames.unshift(`newest`)
 	}
 	
 </script>
