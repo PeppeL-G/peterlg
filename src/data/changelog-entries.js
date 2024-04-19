@@ -5,6 +5,7 @@ export const changelogEntries = [{
 		`Made it possible to pinch zoom the speedruns table on touch screens`,
 		`Added the project JSML`,
 		`Changed order of tags in cards`,
+		`Fixed minor scroll bug appearing when scrolling and the web browser hides/show the app bar in the browser`,
 	],
 }, {
 	version: "1.9.0",

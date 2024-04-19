@@ -113,11 +113,11 @@
 	.modal{
 		position: fixed;
 		left: 50vw;
-		top: 50vh;
+		top: 50dvh;
 		
 		width: calc(100% - 1em);
 		max-width: 48em;
-		max-height: calc(100vh - 1em);
+		max-height: calc(100dvh - 1em);
 		padding: 1em;
 		border-radius: 1em;
 		background-color: white;
