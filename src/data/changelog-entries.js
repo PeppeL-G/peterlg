@@ -1,6 +1,10 @@
 export const changelogEntries = [{
 	version: `?.?.?`,
 	date: `????-??-??`,
+	changeDescriptions: [],
+}, {
+	version: `1.10.0`,
+	date: `2024-05-01`,
 	changeDescriptions: [
 		`Made it possible to pinch zoom the speedruns table on touch screens`,
 		`Added the project JSML`,
