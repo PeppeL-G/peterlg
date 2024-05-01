@@ -6,6 +6,7 @@ export const changelogEntries = [{
 		`Added the project JSML`,
 		`Changed order of tags in cards`,
 		`Fixed minor scroll bug appearing when scrolling and the web browser hides/show the app bar in the browser`,
+		`Added the blogpost "sleep() VS delay()".`
 	],
 }, {
 	version: "1.9.0",
