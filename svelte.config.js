@@ -1,6 +1,6 @@
 import adapter from '@sveltejs/adapter-static'
 import { mdsvex } from "mdsvex"
-import openExternalAnchorsInNewWindowPlugin from './src/rehype-plugins/open-external-anchors-in-new-window-plugin.js'
+import rehypeTransformPlugin from './src/rehype-plugins/rehype-transform-plugin.js'
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -22,7 +22,7 @@ const config = {
 			'.md',
 		],
 		rehypePlugins: [
-			openExternalAnchorsInNewWindowPlugin,
+			rehypeTransformPlugin,
 		],
 	}),
 }
