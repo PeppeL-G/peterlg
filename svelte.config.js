@@ -24,6 +24,7 @@ const config = {
 		rehypePlugins: [
 			rehypeTransformPlugin,
 		],
+		smartypants: false,
 	}),
 }
 
