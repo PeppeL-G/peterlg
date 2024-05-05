@@ -18,7 +18,6 @@
 			
 			<BlogpostCard
 				{blogpost}
-				url="/blogposts/{blogpost.id}"
 			/>
 			
 		{/each}

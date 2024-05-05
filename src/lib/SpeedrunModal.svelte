@@ -5,8 +5,9 @@
 	import { games } from 'data/games.js'
 	import { speedruns } from 'data/speedruns.js'
 	
-	export let closeUrl = ""
 	export let id = 0
+	export let closeUrl = `/speedruns`
+	export let originId = ``
 	
 	const speedrun = speedruns.find(
 		s => s.id == id,
@@ -19,7 +20,7 @@
 
 <Modal
 	{closeUrl}
-	originId={speedrun ? `speedrun-${speedrun.id}` : undefined}
+	originId={originId != `` ?  `originID` : `speedrun-${speedrun?.id}`}
 	title={game?.name ?? `Speedrun not found`}
 >
 	

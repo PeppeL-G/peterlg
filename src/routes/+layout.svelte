@@ -6,6 +6,7 @@
 	import "./global.css"
 	import { mainPages } from "data/main-pages.js"
 	import { page } from "$app/stores"
+	import { onNavigate } from "$app/navigation"
 	
 	function isLeadingToMainPage(url, mainPage){
 		return url.startsWith(mainPage.url)
@@ -14,6 +15,38 @@
 	$: currentPageIndex = mainPages.findIndex(
 		p => isLeadingToMainPage($page.url.pathname, p),
 	)
+	
+	const cachedPageChildren = {
+		// `/the/path`: [childNode1, ...],
+	}
+	let pagesDiv
+	
+	/*
+	onNavigate(e => {
+		
+		const fromPath = +e.from?.url.pathname
+		const page = viewport.querySelector(`[data-index="${from}"]`);
+		cachedPageChildren[from] = [...page.cloneNode(true).childNodes];
+		
+	})
+	*/
+	
+	function storePageChildrenInCache(node, pagePath){
+		cachedPageChildren[pagePath] = [
+			...node.cloneNode(true).childNodes,
+		]
+	}
+	
+	function insertCachedPageChildren(node, pagePath) {
+		
+		const pageChildren = cachedPageChildren[pagePath]
+		
+		node.append(
+			...pageChildren.map(
+				child => child.cloneNode(true),
+			),
+		)
+	}
 	
 </script>
 
@@ -26,14 +59,22 @@
 	<div class="pages" style:--currentPageIndex={currentPageIndex}>
 		{#each mainPages as mainPage, pageIndex (mainPage.name)}
 			<div class="page" style:--pageIndex={pageIndex}>
+				
+				<h1>{mainPage.name}</h1>
+				
 				{#if isLeadingToMainPage($page.url.pathname, mainPage)}
-					<h1>{mainPage.name}</h1>
-					<main data-sveltekit-noscroll>
+					<main
+						data-sveltekit-noscroll
+						use:storePageChildrenInCache={mainPage.url}
+					>
 						<slot />
 					</main>
+				{:else if mainPage.url in cachedPageChildren}
+					<div class="fakedPageContent">
+						<div use:insertCachedPageChildren={mainPage.url}></div>
+					</div>
 				{:else}
 					<div class="fakedPageContent">
-						<h1>{mainPage.name}</h1>
 						<p>
 							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id accumsan lacus. Aliquam maximus metus ante, at euismod justo vestibulum ut. Curabitur ut metus neque. Pellentesque at est feugiat, mollis tellus vitae, elementum orci. Nulla scelerisque eros vitae mauris consectetur vehicula. Vestibulum vitae dictum nisl. Mauris non turpis mattis, viverra orci egestas, ullamcorper sem. Nunc viverra ex nunc, sit amet tempus ipsum faucibus rutrum. Sed sit amet mollis nunc. Nam sit amet est lacus.
 						</p>
@@ -118,10 +159,7 @@
 		max-height: 50vh;
 		overflow-y: hidden;
 		
-		& p{
-			color: transparent;
-			text-shadow: 0 0 5px rgba(0,0,0,0.5);
-		}
+		filter: blur(10px);
 		
 	}
 	

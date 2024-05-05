@@ -14,7 +14,6 @@
 		
 		<ProjectCard
 			{project}
-			url="/projects/{project.id}"
 		/>
 		
 	{/each}

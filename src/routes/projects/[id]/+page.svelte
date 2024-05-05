@@ -7,5 +7,4 @@
 
 <ProjectModal
 	id={$page.params.id}
-	closeUrl="/projects"
 />

@@ -9,5 +9,6 @@
 
 <BlogpostModal
 	id={newestBlogpost.id}
-	closeUrl="/home"
+	originId="newest-blogpost"
+	closeUrl="/home/"
 />

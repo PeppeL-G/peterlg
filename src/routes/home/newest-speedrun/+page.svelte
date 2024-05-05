@@ -9,5 +9,6 @@
 
 <SpeedrunModal
 	id={newestSpeedrun.id}
+	originId="newest-speedrun"
 	closeUrl="/home"
 />

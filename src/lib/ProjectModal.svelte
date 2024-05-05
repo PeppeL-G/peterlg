@@ -5,7 +5,8 @@
 	import Modal from '$lib/Modal.svelte'
 	
 	export let id = ``
-	export let closeUrl = ``
+	export let closeUrl = `/projects`
+	export let originId = ``
 	
 	const project = projects.find(p => p.id == id)
 	
@@ -13,7 +14,7 @@
 
 <Modal
 	{closeUrl}
-	originId={project ? `project-${project.id}` : undefined}
+	originId={originId != `` ? originId : `project-${project?.id}`}
 	title={project?.title ?? `Project not found`}
 >
 	

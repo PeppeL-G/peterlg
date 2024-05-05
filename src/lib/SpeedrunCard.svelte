@@ -6,7 +6,8 @@
 	import Card from './Card.svelte'
 	
 	export let speedrun = speedruns[0]
-	export let url = ``
+	export let elementId = `speedrun-${speedrun.id}`
+	export let url = `/speedruns/${speedrun.id}`
 	
 	const game = games.find(g => g.id == speedrun.gameId)
 	const category = game.categories.find(c => c.id == speedrun.categoryId)
@@ -23,7 +24,7 @@
 
 <Card
 	{url}
-	id="speedrun-{speedrun.id}"
+	id={elementId}
 	title={game.name}
 	content={`${category.name} in ${speedrunTimeToString(speedrun.time)}`}
 	{tagNames}

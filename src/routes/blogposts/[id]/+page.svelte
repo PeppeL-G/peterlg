@@ -7,5 +7,4 @@
 
 <BlogpostModal
 	id={$page.params.id}
-	closeUrl="/blogposts"
 />

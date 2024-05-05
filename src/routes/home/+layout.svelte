@@ -22,16 +22,19 @@
 	
 	<BlogpostCard
 		blogpost={newestBlogpost}
+		elementId="newest-blogpost"
 		url="/home/newest-blogpost/"
 	/>
 	
 	<ProjectCard
 		project={newestProject}
+		elementId="newest-project"
 		url="/home/newest-project/"
 	/>
 	
 	<SpeedrunCard
 		speedrun={newestSpeedrun}
+		elementId="newest-speedrun"
 		url="/home/newest-speedrun/"
 	/>
 	

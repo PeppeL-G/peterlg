@@ -9,5 +9,6 @@
 
 <ProjectModal
 	id={newestProject.id}
+	originId="newest-project"
 	closeUrl="/home"
 />

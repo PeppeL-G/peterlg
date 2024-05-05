@@ -4,7 +4,8 @@
 	import Card from './Card.svelte'
 	
 	export let project = projects[0]
-	export let url = ``
+	export let elementId = `project-${project.id}`
+	export let url = `/projects/${project.id}`
 	
 	const tagNames = [
 		`project`,
@@ -18,7 +19,7 @@
 
 <Card
 	{url}
-	id="project-{project.id}"
+	id={elementId}
 	title={project.title}
 	content={project.introduction}
 	{tagNames}

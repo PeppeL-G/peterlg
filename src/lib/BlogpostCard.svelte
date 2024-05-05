@@ -4,7 +4,8 @@
 	import Card from './Card.svelte'
 	
 	export let blogpost = blogposts[0]
-	export let url = ``
+	export let elementId = `blogpost-${blogpost.id}`
+	export let url = `/blogposts/${blogpost.id}`
 	
 	const tagNames = [
 		`blogpost`,
@@ -18,7 +19,7 @@
 
 <Card
 	{url}
-	id="blogpost-{blogpost.id}"
+	id={elementId}
 	title={blogpost.title}
 	content={blogpost.summary}
 	{tagNames}

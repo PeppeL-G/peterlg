@@ -7,5 +7,4 @@
 
 <SpeedrunModal
 	id={$page.params.id}
-	closeUrl="/speedruns/"
 />
