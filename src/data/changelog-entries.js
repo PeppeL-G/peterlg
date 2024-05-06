@@ -1,6 +1,10 @@
 export const changelogEntries = [{
 	version: `?.?.?`,
 	date: `????-??-??`,
+	changeDescriptions: [],
+}, {
+	version: `1.11.0`,
+	date: `2024-05-06`,
 	changeDescriptions: [
 		`Cache page content when navigating, so pages that has been loaded are shown when navigating/the pages slide across the screen`,
 		`Fixed a bug with text overflowing while reading a project on a small screen`,
