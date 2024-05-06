@@ -88,6 +88,7 @@
 	.content{
 		grid-row: 4;
 		grid-column: 1 / span 2;
+		max-width: 100%;
 	}
 	
 </style>
