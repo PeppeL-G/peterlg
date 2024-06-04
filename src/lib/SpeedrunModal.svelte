@@ -20,7 +20,7 @@
 
 <Modal
 	{closeUrl}
-	originId={originId != `` ?  `originID` : `speedrun-${speedrun?.id}`}
+	originId={originId != `` ? originId : `speedrun-${speedrun?.id}`}
 	title={game?.name ?? `Speedrun not found`}
 >
 	
