@@ -1,7 +1,9 @@
 export const changelogEntries = [{
 	version: `?.?.?`,
 	date: `????-??-??`,
-	changeDescriptions: [],
+	changeDescriptions: [
+		`Added "open in new window" icon to external links`,
+	],
 }, {
 	version: `1.11.0`,
 	date: `2024-05-06`,
