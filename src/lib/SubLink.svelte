@@ -10,6 +10,7 @@
 	{href}
 	style:--scale-factor="{scaleFactor}"
 	id={id ? id : null}
+	rel="bookmark"
 >
 	<slot />
 </a>

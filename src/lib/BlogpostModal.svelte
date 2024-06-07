@@ -20,7 +20,7 @@
 	
 	{#if blogpost}
 		
-		<article class="blogpost">
+		<div class="blogpost">
 			
 			<p class="introduction">
 				{blogpost.summary}
@@ -44,7 +44,7 @@
 				<svelte:component this={blogpost.ContentComponent} />
 			</div>
 			
-		</article>
+		</div>
 		
 	{:else}
 		

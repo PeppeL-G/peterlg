@@ -74,7 +74,7 @@
 	on:click={onCloseAnchorClick}
 ></a>
 
-<div
+<article
 	class="modal"
 	in:modalTransition
 	out:modalTransition
@@ -93,7 +93,7 @@
 		<slot />
 	</div>
 	
-</div>
+</article>
 
 <style>
 	

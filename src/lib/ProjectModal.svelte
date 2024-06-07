@@ -20,7 +20,7 @@
 	
 	{#if project}
 		
-		<article class="project">
+		<div class="project">
 			
 			<p class="introduction">
 				{project.introduction}
@@ -44,7 +44,7 @@
 				<svelte:component this={project.DescriptionComponent} />
 			</div>
 			
-		</article>
+		</div>
 		
 	{:else}
 		

@@ -13,7 +13,7 @@
 	
 </script>
 
-<div class="card">
+<article class="card">
 	<SubLink href={url} {id}>
 		<h3>{title}</h3>
 		<img src={imageUrl} alt="Card.">
@@ -25,7 +25,7 @@
 			{/each}
 		</div>
 	</SubLink>
-</div>
+</article>
 
 <style>
 	

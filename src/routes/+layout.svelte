@@ -6,7 +6,7 @@
 	import "./global.css"
 	import { mainPages } from "data/main-pages.js"
 	import { page } from "$app/stores"
-	import { onNavigate } from "$app/navigation"
+	import FakedPageContent from "./FakedPageContent.svelte";
 	
 	function isLeadingToMainPage(url, mainPage){
 		return url.startsWith(mainPage.url)
@@ -19,17 +19,6 @@
 	const cachedPageChildren = {
 		// `/the/path`: [childNode1, ...],
 	}
-	let pagesDiv
-	
-	/*
-	onNavigate(e => {
-		
-		const fromPath = +e.from?.url.pathname
-		const page = viewport.querySelector(`[data-index="${from}"]`);
-		cachedPageChildren[from] = [...page.cloneNode(true).childNodes];
-		
-	})
-	*/
 	
 	function storePageChildrenInCache(node, pagePath){
 		cachedPageChildren[pagePath] = [
@@ -58,38 +47,30 @@
 	
 	<div class="pages" style:--currentPageIndex={currentPageIndex}>
 		{#each mainPages as mainPage, pageIndex (mainPage.name)}
-			<div class="page" style:--pageIndex={pageIndex}>
-				
-				<h1>{mainPage.name}</h1>
+			
+			<section class="page" style:--pageIndex={pageIndex}>
 				
 				{#if isLeadingToMainPage($page.url.pathname, mainPage)}
 					<main
 						data-sveltekit-noscroll
 						use:storePageChildrenInCache={mainPage.url}
 					>
+						<h1>{mainPage.name}</h1>
 						<slot />
 					</main>
 				{:else if mainPage.url in cachedPageChildren}
-					<div class="fakedPageContent">
+					<div class="fakedPageContent" hidden>
 						<div use:insertCachedPageChildren={mainPage.url}></div>
 					</div>
 				{:else}
-					<div class="fakedPageContent">
-						<p>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id accumsan lacus. Aliquam maximus metus ante, at euismod justo vestibulum ut. Curabitur ut metus neque. Pellentesque at est feugiat, mollis tellus vitae, elementum orci. Nulla scelerisque eros vitae mauris consectetur vehicula. Vestibulum vitae dictum nisl. Mauris non turpis mattis, viverra orci egestas, ullamcorper sem. Nunc viverra ex nunc, sit amet tempus ipsum faucibus rutrum. Sed sit amet mollis nunc. Nam sit amet est lacus.
-						</p>
-						<p>
-							Sed vitae interdum nulla. Cras viverra blandit eleifend. Donec eget odio augue. Pellentesque eleifend fringilla consequat. Sed mi turpis, semper quis tellus at, placerat suscipit mauris. Etiam nec lacinia lacus. Curabitur nunc mi, sollicitudin vel fringilla ac, malesuada a erat. 
-						</p>
-						<p>
-							Etiam in metus ac diam sodales scelerisque. In tincidunt, sapien eget vulputate egestas, libero augue placerat mauris, ac viverra massa lacus fringilla nisl. Sed tempor orci vel sapien feugiat, nec dictum neque lacinia. Donec viverra at nisl at porta. Praesent vel porta diam. Nulla erat ex, lobortis non metus nec, convallis ullamcorper ipsum. Nunc fringilla vitae ligula vitae cursus. Aenean tincidunt suscipit ultricies. Nullam sodales nunc pharetra egestas tempus. Fusce ipsum diam, rhoncus id risus id, sodales tincidunt tortor. Nullam egestas vehicula nisl et consectetur. Phasellus ullamcorper, velit ut congue euismod, est velit lobortis nulla, eu tristique odio ante gravida nulla.
-						</p>
-						<p>
-							Cras ullamcorper est in risus consequat vestibulum. Aenean eget lorem eu nibh volutpat porttitor pharetra sed mauris. Vestibulum auctor est vitae nisi vestibulum, tincidunt fermentum sem molestie. Maecenas et scelerisque dui, sit amet dapibus odio. Sed vel euismod turpis. Maecenas feugiat est vel justo tincidunt, vel sollicitudin velit iaculis.
-						</p>
+					<div class="fakedPageContent" hidden>
+						<h1>{mainPage.name}</h1>
+						<FakedPageContent />
 					</div>
 				{/if}
-			</div>
+				
+				</section>
+				
 		{/each}
 	</div>
 	
@@ -155,6 +136,8 @@
 	}
 	
 	.fakedPageContent{
+		
+		display: block;
 		
 		max-height: 50vh;
 		overflow-y: hidden;
