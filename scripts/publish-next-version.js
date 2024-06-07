@@ -26,17 +26,19 @@ if (newVersion == `?.?.?`) {
 	process.exit(1)
 }
 
+prepareChangelogEntriesForPublish()
 deployApp()
+prepareChangelogEntriesForDev()
 createCommit()
 restoreScriptFile()
 
-function deployApp() {
+function prepareChangelogEntriesForPublish(){
 	
 	let changelogEntriesAsString = fs.readFileSync(
 		pathToChangelogEntries,
 		{ encoding: "utf8" },
 	)
-		
+	
 	changelogEntriesAsString = changelogEntriesAsString.replace(
 		`?.?.?`,
 		newVersion,
@@ -45,7 +47,26 @@ function deployApp() {
 		`????-??-??`,
 		new Date().toISOString().split('T')[0],
 	)
-		
+	
+	fs.writeFileSync(pathToChangelogEntries, changelogEntriesAsString)
+	
+}
+
+function deployApp() {
+	
+	childProcess.execSync(
+		`npm run deploy`,
+	)
+	
+}
+
+function prepareChangelogEntriesForDev(){
+	
+	let changelogEntriesAsString = fs.readFileSync(
+		pathToChangelogEntries,
+		{ encoding: "utf8" },
+	)
+	
 	const find = `export const changelogEntries = [{`
 	const replaceWith = `export const changelogEntries = [{
 	version: \`?.?.?\`,
@@ -58,10 +79,6 @@ function deployApp() {
 	)
 	
 	fs.writeFileSync(pathToChangelogEntries, changelogEntriesAsString)
-	
-	childProcess.execSync(
-		`npm run deploy`,
-	)
 	
 }
 

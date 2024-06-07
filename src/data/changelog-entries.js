@@ -1,7 +1,9 @@
 export const changelogEntries = [{
 	version: `?.?.?`,
 	date: `????-??-??`,
-	changeDescriptions: [],
+	changeDescriptions: [
+		`Fixed bug in deploy script where the footer shows v?.?.?`,
+	],
 }, {
 	version: `1.12.0`,
 	date: `2024-06-07`,
