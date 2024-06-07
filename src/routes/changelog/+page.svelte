@@ -13,7 +13,7 @@
 {#each entries as entry}
 	
 	<h2>
-		<span class="version">{entry.version}</span>
+		<span class="version">v{entry.version}</span>
 		<span class="date">{entry.date}</span>
 	</h2>
 	<ul>

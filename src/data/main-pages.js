@@ -1,3 +1,5 @@
+import { changelogEntries } from "./changelog-entries.js"
+
 export const mainPages = [{
 	name: `Welcome!`,
 	url: `/home/`,
@@ -20,6 +22,7 @@ export const mainPages = [{
 	where: `footer`,
 }, {
 	name: `Changelog`,
+	linkName: `v${changelogEntries[0].version}`,
 	url: `/changelog/`,
 	where: `footer`,
 }]

@@ -19,7 +19,7 @@
 	<div class="links">
 		{#each footerPages as page}
 			<MainLink href="{page.url}">
-				{page.name}
+				{page.linkName ?? page.name}
 			</MainLink>
 		{/each}
 	</div>

@@ -4,6 +4,7 @@ export const changelogEntries = [{
 	changeDescriptions: [
 		`Added "open in new window" icon to external links`,
 		`Improved semantics`,
+		`Show version number in footer`,
 	],
 }, {
 	version: `1.11.0`,

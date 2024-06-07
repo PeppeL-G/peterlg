@@ -11,7 +11,7 @@
 <nav>
 	{#each navbarPages as page}
 		<MainLink href={page.url}>
-			{page.name}
+			{page.linkName ?? page.name}
 		</MainLink>
 	{/each}
 </nav>
