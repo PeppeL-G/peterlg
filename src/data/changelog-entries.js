@@ -1,6 +1,10 @@
 export const changelogEntries = [{
 	version: `?.?.?`,
 	date: `????-??-??`,
+	changeDescriptions: [],
+}, {
+	version: `1.13.0`,
+	date: `2024-07-24`,
 	changeDescriptions: [
 		`Added the project "Bagawork"`,
 		`Added the blogpost "AI - The Web Saviour!"`,
