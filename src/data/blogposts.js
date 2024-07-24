@@ -5,7 +5,7 @@ import AiTheWebSaviourContentComponent from './blogposts/ai-the-web-saviour/cont
 export const blogposts = [{
 	id: `ai-the-web-killer`,
 	title: `AI - The Web Saviour!`,
-	dateWritten: `2024-??-??`,
+	dateWritten: `2024-07-24`,
 	summary: `More and more people think that AI will kill the web. I rather think the opposite.`,
 	ContentComponent: AiTheWebSaviourContentComponent,
 }, {
