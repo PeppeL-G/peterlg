@@ -3,6 +3,7 @@ export const changelogEntries = [{
 	date: `????-??-??`,
 	changeDescriptions: [
 		`Added the project "Bagawork"`,
+		`Added the blogpost "AI - The Web Saviour!"`,
 	],
 }, {
 	version: `1.12.1`,
