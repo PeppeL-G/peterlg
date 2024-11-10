@@ -1,8 +1,15 @@
 import SleepVsDelayContentComponent from './blogposts/sleep-vs-delay/content.md'
 import OptimalInputComponentContentComponent from './blogposts/optimal-input-component/content.md'
 import AiTheWebSaviourContentComponent from './blogposts/ai-the-web-saviour/content.md'
+import FunctionalVsImperativeContentComponent from './blogposts/functional-vs-imperative/content.md'
 
 export const blogposts = [{
+	id: `functional-vs-imperative`,
+	title: `Functional VS Imperative`,
+	dateWritten: `2024-11-10`,
+	summary: `Which is easiest to learn, functional programming or imperative programming? Here's my two cents.`,
+	ContentComponent: FunctionalVsImperativeContentComponent,
+}, {
 	id: `ai-the-web-killer`,
 	title: `AI - The Web Saviour!`,
 	dateWritten: `2024-07-24`,
