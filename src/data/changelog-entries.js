@@ -1,6 +1,10 @@
 export const changelogEntries = [{
 	version: `?.?.?`,
 	date: `????-??-??`,
+	changeDescriptions: [],
+}, {
+	version: `1.15.0`,
+	date: `2025-06-19`,
 	changeDescriptions: [
 		`Added a secret page where I can see when the garbage truck comes`,
 	],
