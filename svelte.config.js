@@ -11,6 +11,12 @@ const config = {
 			functions: 'src/functions',
 			assets: 'src/assets',
 		},
+		prerender: {
+			entries: [
+				`/`,
+				`/sopor/`,
+			],
+		},
 	},
 	extensions: [
 		'.svelte',

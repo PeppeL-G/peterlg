@@ -1,6 +1,10 @@
 import { changelogEntries } from "./changelog-entries.js"
 
 export const mainPages = [{
+	name: `Sopor`,
+	url: `/sopor/`,
+	where: `never`,
+}, {
 	name: `Welcome!`,
 	url: `/home/`,
 	where: `navbar`,
