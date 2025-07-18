@@ -1,0 +1,1 @@
+.background.svelte-1akf4yt{display:grid;place-items:center;background-color:#000;cursor:pointer}.background.fullScreen{--left:50vw;--right:50vw;--top:50vh;--bottom:50vh;position:fixed;left:var(--left);right:var(--right);top:var(--top);bottom:var(--bottom);transition-property:left,right,top,bottom;transition-duration:1s}img.svelte-1akf4yt{max-width:100%}
