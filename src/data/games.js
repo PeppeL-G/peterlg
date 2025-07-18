@@ -1,4 +1,78 @@
 export const games = [{
+	id: "spyro-3-year-of-the-dragon-spyro-reignited-trilogy",
+	name: "Spyro 3: Year of the Dragon (Spyro Reignited Trilogy)",
+	consoleName: "Cross-Platform",
+	categories: [{
+		id: "any",
+		name: "Any%",
+		description: `Beat the final boss.`,
+	}, {
+		id: "117",
+		name: "117%",
+		description: `Collect all gems (20 000) and eggs (150), and beat the final boss`,
+	}],
+}, {
+	id: "spyro-2-riptos-rage-spyro-reignited-trilogy",
+	name: "Spyro 2: Ripto's Rage! (Spyro Reignited Trilogy)",
+	consoleName: "Cross-Platform",
+	categories: [{
+		id: "any",
+		name: "Any%",
+		description: `Beat the final boss.`,
+	}, {
+		id: "100",
+		name: "100%",
+		description: `Collect all gems (10 000) and orbs (64), and beat the final boss`,
+	}],
+}, {
+	id: "spyro-the-dragon-spyro-reignited-trilogy",
+	name: "Spyro the Dragon (Spyro Reignited Trilogy)",
+	consoleName: "Cross-Platform",
+	categories: [{
+		id: "any",
+		name: "Any%",
+		description: `Beat the final boss.`,
+	}, {
+		id: "120",
+		name: "120%",
+		description: `Collect all gems (16 000) and eggs (12), free all dragons (80) and beat the final boss`,
+	}],
+}, {
+	id: "crash-bandicoot-4-its-about-time",
+	name: "Crash Bandicoot 4: It's About Time",
+	consoleName: "Cross-Platform",
+	categories: [{
+		id: "any",
+		name: "Any%",
+		description: `Beat the final boss.`,
+	}, {
+		id: "100",
+		name: "100%",
+		description: `Collect all gems, all flashback relics, all relics (gold is good enough), and beat the final boss.`,
+	}],
+}, {
+	id: "new-super-luckys-tail",
+	name: "New Super Lucky's Tale",
+	consoleName: "Cross-Platform",
+	categories: [{
+		id: "any",
+		name: "Any%",
+		description: `Beat the final boss.`,
+	}, {
+		id: "100",
+		name: "100%",
+		description: `Collect all pages, complete all levels in Foxington as well as collect all hot dogs there, and beat the final boss.`,
+	}],
+}, {
+	id: "hogwarts-legacy",
+	name: "Hogwarts Legacy",
+	consoleName: "Cross-Platform",
+	categories: [{
+		id: "any",
+		name: "Any%",
+		description: `Beat the final boss.`,
+	}],
+}, {
 	id: "crash-bandicoot-3-warped-n-sane-trilogy",
 	name: "Crash Bandicoot 3: Warped (N. Sane Trilogy)",
 	consoleName: "Cross-Platform",

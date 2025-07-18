@@ -1,7 +1,9 @@
 export const changelogEntries = [{
 	version: `?.?.?`,
 	date: `????-??-??`,
-	changeDescriptions: [],
+	changeDescriptions: [
+		`Added speedruns for a year back or so`,
+	],
 }, {
 	version: `1.15.0`,
 	date: `2025-06-19`,
