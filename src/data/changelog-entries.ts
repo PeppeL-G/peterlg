@@ -1,6 +1,6 @@
 export const changelogEntries: ChangelogEntry[] = [{
-	version: `?.?.?`,
-	date: `????-??-??`,
+	version: `1.17.0`,
+	date: `2026-01-07`,
 	changeDescriptions: [
 		`Updated from Svelte 4 to Svelte 5.`,
 		`Rewrote code from JavaScript to TypeScript.`,
