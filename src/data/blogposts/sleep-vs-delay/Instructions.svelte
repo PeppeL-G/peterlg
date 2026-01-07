@@ -1,8 +1,17 @@
-<script>
+<script lang="ts">
 	
-	export let instructionsText = ``
+	let {
+		instructionsText,
+	}: {
+		instructionsText: string;
+	} = $props()
 	
-	function getInstructions(instructionsText){
+	type Instruction = {
+		color: string,
+		number: string,
+	}
+	
+	function getInstructions(instructionsText: string){
 		
 		return instructionsText.trim().split(/\r?\n/).map(line => {
 			
@@ -11,13 +20,13 @@
 			return {
 				color,
 				number,
-			}
+			} as Instruction
 			
 		})
 		
 	}
 	
-	function getInstructionText(instruction){
+	function getInstructionText(instruction: Instruction){
 		
 		if(instruction.number == `...`){
 			return `...`

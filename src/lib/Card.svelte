@@ -1,12 +1,22 @@
-<script>
+<script lang="ts">
 	
-	export let url = ""
-	export let id = ""
-	export let title = ""
-	export let content = ""
-	export let tagNames = [""].slice(1)
-	export let imageUrl = ""
-	export let date = ""
+	let {
+		url,
+		id,
+		title,
+		content,
+		tagNames,
+		imageUrl,
+		date,
+	}: {
+		url: string;
+		id: string;
+		title: string;
+		content: string;
+		tagNames: string[];
+		imageUrl: string;
+		date: string;
+	} = $props()
 	
 	import SubLink from "./SubLink.svelte"
 	import Tag from "./Tag.svelte"
@@ -33,7 +43,7 @@
 		
 		display: contents;
 		
-		& > *{
+		& > :global(*){
 			
 			display: grid;
 			grid-row: span 5;

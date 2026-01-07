@@ -1,6 +1,6 @@
-<script>
+<script lang="ts">
 	
-	import { blogposts } from "data/blogposts.js"
+	import { blogposts } from "../../../data/blogposts.ts"
 	import BlogpostModal from "$lib/BlogpostModal.svelte"
 	
 	const newestBlogpost = blogposts[0]
@@ -8,7 +8,7 @@
 </script>
 
 <BlogpostModal
-	id={newestBlogpost.id}
+	blogpostId={newestBlogpost.id}
 	originId="newest-blogpost"
 	closeUrl="/home/"
 />

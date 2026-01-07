@@ -1,6 +1,6 @@
-<script>
+<script lang="ts">
 	
-	import { projects } from "data/projects.js"
+	import { projects } from "../../../data/projects.ts"
 	import ProjectModal from "$lib/ProjectModal.svelte"
 	
 	const newestProject = projects[0]
@@ -8,7 +8,7 @@
 </script>
 
 <ProjectModal
-	id={newestProject.id}
+	projectId={newestProject.id}
 	originId="newest-project"
 	closeUrl="/home"
 />

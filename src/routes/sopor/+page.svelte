@@ -1,5 +1,7 @@
-<script>
-	import { browser } from "$app/environment"
+<script lang="ts">
+	
+	import { Temporal } from 'temporal-polyfill'
+	import { browser } from '$app/environment'
 	
 	const trashPickupUrl = `https://minasidor.juneavfall.se/FutureWebJuneBasic/SimpleWastePickup/GetWastePickupSchedule?address=Grengatan%203%20B,%20Mullsj%C3%B6%20(38815)`
 	
@@ -17,7 +19,7 @@
 		
 	}
 	
-	function getNumberOfDaysTo(dateString){
+	function getNumberOfDaysTo(dateString: string){
 		
 		const date = Temporal.PlainDate.from(dateString)
 		const today = Temporal.Now.plainDateISO()
@@ -28,7 +30,7 @@
 		
 	}
 	
-	function getDaysLeftString(numberOfDaysLeft){
+	function getDaysLeftString(numberOfDaysLeft: number){
 		
 		if(numberOfDaysLeft == 0){
 			return `Idag`

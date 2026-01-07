@@ -1,5 +1,7 @@
-<script>
+<script lang="ts">
+	
 	import Input from './Input.svelte'
+	
 </script>
 
 In one of my projects, I simply wanted to use a well-designed `<input>` component that is easy to use, but on the web I could only find half good ones requiring you to install an entire HTML & CSS framework or a whole npm package, and some of them was even dependent on client-side JS to function. I wish I knew a website with HTML and CSS components where one simply can copy-paste all the HTML *and* CSS code for a component...
@@ -10,13 +12,13 @@ Since I don't know any such website, I decided to design such a component myself
 ## Requirements
 Before designing the component, let's go through the requirements I had for it, so I can motivate the design decisions I've made. The component:
 
-* Must be easy to use for developers
-* Must work on both small and big screens
-* Must work without client-side JavaScript
+* Must be easy to use for developers.
+* Must work on both small and big screens.
+* Must work without client-side JavaScript.
 * Must be easy to use for users, including:
-	* Must show a label (so the user knows what data to enter)
-	* Must show a longer description/detailed information (if one is needed)
-	* Must show an error message (if one is needed)
+	* Must show a label (so the user knows what data to enter).
+	* Must show a longer description/detailed information (if one is needed).
+	* Must show an error message (if one is needed).
 
 
 
@@ -46,7 +48,7 @@ Developers will often have multiple instances of this component on the same page
 Next, for the longer description, I choose to simply use a [`<div>`](https://html.spec.whatwg.org/#the-div-element) element, since there doesn't exist an HTML element with the semantic meaning for this specific purpose. I could instead have used a [`<span>`](https://html.spec.whatwg.org/#the-span-element) element, but for two reasons I prefer using a `<div>` element:
 
 1. `<div>` is one letter shorter than `<span>`, so why have longer code for no good reason?
-2. Neither of `<div>` and `<span>` has semantic meaning, but `<div>` is a block element, and the description in this case is a text totally different from the other text in the `<label>` element, and to me it's more semantically correct to put text explaining different things in different blog elements
+2. Neither of `<div>` and `<span>` has semantic meaning, but `<div>` is a block element, and the description in this case is a text totally different from the other text in the `<label>` element, and to me it's more semantically correct to put text explaining different things in different blog elements.
 
 I'm not sure if I'm right about reason #2, but reason #1 is good enough on its own in my opinion, so I choose to go with:
 
@@ -71,8 +73,8 @@ And to show an error message, I choose to add yet another `<div>` element that c
 
 To later be able to style the different parts the component consists of with CSS, I:
 
-* Wrap the text `The label` in a `<div>` element (which I now start to call `title` to make it more distinct from the `<label>` element, which in fact is the entire component)
-* Add classes to all `<div>` elements
+* Wrap the text `The label` in a `<div>` element (which I now start to call `title` to make it more distinct from the `<label>` element, which in fact is the entire component).
+* Add classes to all `<div>` elements.
 
 ```html
 <label>
@@ -181,7 +183,7 @@ But since that's not something users are expected to do, I can live with this. I
 It is very easy to encapsulate this component in a re-usable frontend framework component yourself (if you would only know the CSS code for it... 😅). Here's what the code for such a [Svelte](https://svelte.dev/) component could look like (there, you finally got the CSS code!):
 
 ```html
-<script>
+<script lang="ts">
 	
 	export let type = "text"
 	export let name = ""

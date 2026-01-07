@@ -1,6 +1,7 @@
-<script>
+<script lang="ts">
+	
 	import MainLink from "$lib/MainLink.svelte"
-	import { mainPages } from "data/main-pages.js"
+	import { mainPages } from "../data/main-pages.ts"
 	
 	const navbarPages = mainPages.filter(
 		p => p.where == `navbar`,
@@ -17,6 +18,7 @@
 </nav>
 
 <style>
+	
 	nav {
 		border: 1px solid black;
 		border-radius: 1em;
@@ -26,4 +28,5 @@
 		justify-content: center;
 		margin: 0 1em;
 	}
+	
 </style>

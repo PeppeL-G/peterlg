@@ -1,27 +1,37 @@
 {
+	
 	"name": "peterlg",
+	"version": "0.0.1",
 	"private": true,
-	"scripts": {
-		"dev": "vite dev --host",
-		"build": "vite build",
-		"preview": "vite preview --host",
-		"deploy": "node ./scripts/deploy.js",
-		"check": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json",
-		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json --watch"
-	},
-	"devDependencies": {
-		"@sveltejs/adapter-static": "^3.0.1",
-		"@sveltejs/kit": "^2.5.5",
-		"svelte": "^4.2.12",
-		"svelte-check": "^3.6.8",
-		"typescript": "^5.4.3",
-		"vite": "^5.2.7"
-	},
+	
 	"type": "module",
-	"dependencies": {
-		"@js-temporal/polyfill": "^0.4.4",
-		"mdsvex": "^0.11.0",
+	
+	"scripts": {
+		"dev": "vite dev",
+		"build": "vite build",
+		"deploy": "node ./scripts/deploy.ts",
+		"preview": "vite preview",
+		"prepare": "svelte-kit sync || echo ''",
+		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
+	},
+	
+	"devDependencies": {
+		"@js-temporal/polyfill": "^0.5.1",
+		"@sveltejs/adapter-static": "^3.0.10",
+		"@sveltejs/kit": "^2.49.2",
+		"@sveltejs/vite-plugin-svelte": "^6.2.1",
+		"@types/hast": "^3.0.4",
+		"@types/node": "^25.0.3",
+		"mdsvex": "^0.12.6",
 		"prism-themes": "^1.9.0",
-		"unist-util-visit": "^5.0.0"
+		"svelte": "^5.46.1",
+		"svelte-check": "^4.3.5",
+		"temporal-polyfill": "0.3.0",
+		"typescript": "^5.9.3",
+		"unified": "11.0.5",
+		"unist-util-visit": "^5.0.0",
+		"vite": "^7.3.0"
 	}
+	
 }

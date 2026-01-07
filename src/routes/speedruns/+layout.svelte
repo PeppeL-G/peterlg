@@ -1,34 +1,33 @@
-<script>
+<script lang="ts">
 	
-	import { speedrunTimeToString } from 'functions/speedrun-time-to-string.js'
-	import { games } from 'data/games.js'
-	import { speedruns } from 'data/speedruns.js'
+	let {
+		children,
+	}: {
+		children: Snippet;
+	} = $props()
+	
+	import { speedrunTimeToString } from '../../functions/speedrun-time-to-string.ts'
+	import { games } from '../../data/games.ts'
+	import { speedruns } from '../../data/speedruns.ts'
 	import SubLink from '$lib/SubLink.svelte'
-	import { pinch } from '../../actions/pinch.js'
+	import { createPinchAttachment } from '../../attachments/create-pinch-attachment.ts'
+	import type { Snippet } from 'svelte'
 	
-	const pinchScaleFactor = 0.985
-	const minTableScalePercentages = 50
-	const maxTableScalePercentages = 100
-	let tableScalePercentages = maxTableScalePercentages
+	const minTableScalePercentages = 25
+	const maxTableScalePercentages = 120
 	
-	function onPinch(lengthDifference){
+	let tableScalePercentages = $state(maxTableScalePercentages)
+	
+	function onPinch(pinchFactor: number){
 		
-		if(lengthDifference < 0){
-			
-			tableScalePercentages *= pinchScaleFactor
-			
-			if(tableScalePercentages < minTableScalePercentages){
-				tableScalePercentages = minTableScalePercentages
-			}
-			
-		}else{
-			
-			tableScalePercentages /= pinchScaleFactor
-			
-			if(maxTableScalePercentages < tableScalePercentages){
-				tableScalePercentages = maxTableScalePercentages
-			}
-			
+		tableScalePercentages *= pinchFactor
+		
+		if(tableScalePercentages < minTableScalePercentages){
+			tableScalePercentages = minTableScalePercentages
+		}
+		
+		if(maxTableScalePercentages < tableScalePercentages){
+			tableScalePercentages = maxTableScalePercentages
 		}
 		
 	}
@@ -50,7 +49,11 @@
 	over multiple days (sometimes several weeks).
 </p>
 
-<div class="table" use:pinch={{onPinch}} style:font-size="{tableScalePercentages}%">
+<div
+	class="table"
+	{@attach createPinchAttachment({onPinch})}
+	style:font-size="{tableScalePercentages}%"
+>
 	
 	<div class="headerRow">
 		<div>Date Played</div>
@@ -68,8 +71,8 @@
 	
 	{#each speedruns as speedrun}
 		
-		{@const game = games.find(g => g.id == speedrun.gameId)}
-		{@const category = game.categories.find(c => c.id == speedrun.categoryId)}
+		{@const game = games.find(g => g.id == speedrun.gameId)!}
+		{@const category = game.categories.find(c => c.id == speedrun.categoryId)!}
 		
 		<SubLink
 			href="/speedruns/{speedrun.id}"
@@ -95,7 +98,7 @@
 	
 </div>
 
-<slot />
+{@render children()}
 
 <style>
 	

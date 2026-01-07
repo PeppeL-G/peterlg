@@ -1,14 +1,25 @@
-<script>
+<script lang="ts">
 	
-	import { projects } from 'data/projects.js'
+	let {
+		projectId,
+		closeUrl,
+		originId,
+	}: {
+		projectId: string;
+		closeUrl: string;
+		originId: string;
+	} = $props()
+	
 	import FullscreenableImage from '$lib/FullscreenableImage.svelte'
 	import Modal from '$lib/Modal.svelte'
+	import { projects } from '../data/projects.ts'
+	import { getProjectContentComponent } from '../functions/get-project-content-component.ts'
 	
-	export let id = ``
-	export let closeUrl = `/projects`
-	export let originId = ``
-	
-	const project = projects.find(p => p.id == id)
+	let project = $derived(
+		projects.find(
+			p => p.id == projectId,
+		),
+	)
 	
 </script>
 
@@ -41,7 +52,15 @@
 			</div>
 			
 			<div class="content">
-				<svelte:component this={project.DescriptionComponent} />
+				
+				{#await getProjectContentComponent(project)}
+					<p>Loading content...</p>
+				{:then ProjectContentComponent} 
+					<ProjectContentComponent />
+				{:catch}
+					<p>Error: Could not load the content of the project.</p>
+				{/await}
+				
 			</div>
 			
 		</div>

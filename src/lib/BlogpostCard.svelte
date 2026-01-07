@@ -1,19 +1,31 @@
-<script>
+<script lang="ts">
 	
-	import { blogposts } from 'data/blogposts.js'
+	let {
+		blogpost,
+		elementId,
+		url,
+	}: {
+		blogpost: Blogpost;
+		elementId: string;
+		url: string;
+	} = $props()
+	
+	import { blogposts } from '../data/blogposts.ts'
 	import Card from './Card.svelte'
 	
-	export let blogpost = blogposts[0]
-	export let elementId = `blogpost-${blogpost.id}`
-	export let url = `/blogposts/${blogpost.id}`
-	
-	const tagNames = [
-		`blogpost`,
-	]
-	
-	if(blogpost == blogposts[0]){
-		tagNames.unshift(`newest`)
-	}
+	let tagNames = $derived.by(() => {
+		
+		const tagNames = [
+			`blogpost`,
+		]
+		
+		if(blogpost == blogposts[0]){
+			tagNames.unshift(`newest`)
+		}
+		
+		return tagNames
+		
+	})
 	
 </script>
 
@@ -24,5 +36,5 @@
 	content={blogpost.summary}
 	{tagNames}
 	imageUrl="/blogposts/{blogpost.id}.png"
-	date="{blogpost.dateWritten}"
+	date={blogpost.dateWritten}
 />

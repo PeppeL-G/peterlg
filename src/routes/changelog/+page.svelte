@@ -1,6 +1,6 @@
-<script>
+<script lang="ts">
 	
-	import { changelogEntries } from "data/changelog-entries.js"
+	import { changelogEntries } from "../../data/changelog-entries.ts"
 	
 	const entries = changelogEntries.filter(
 		e => 0 < e.changeDescriptions.length,
@@ -28,6 +28,7 @@
 	
 	h2{
 		font-size: 1.2em;
+		margin-bottom: 0.2em;
 	}
 	
 	.version{
@@ -46,6 +47,7 @@
 	
 	ul{
 		margin-top: 0;
+		margin-bottom: 0.1em;
 	}
 	
 </style>

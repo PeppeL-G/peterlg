@@ -1,4 +1,4 @@
-export const games = [{
+export const games: Game[] = [{
 	id: "spyro-3-year-of-the-dragon-spyro-reignited-trilogy",
 	name: "Spyro 3: Year of the Dragon (Spyro Reignited Trilogy)",
 	consoleName: "Cross-Platform",

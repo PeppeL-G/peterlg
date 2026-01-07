@@ -1,6 +1,6 @@
 import { Temporal } from "@js-temporal/polyfill"
 
-export const speedruns = [{
+export const speedruns: Speedrun[] = [{
 	id: 44,
 	gameId: "spyro-3-year-of-the-dragon-spyro-reignited-trilogy",
 	consoleName: "Switch",

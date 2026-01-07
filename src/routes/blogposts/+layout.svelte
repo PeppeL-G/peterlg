@@ -1,8 +1,15 @@
-<script>
+<script lang="ts">
 	
-	import { blogposts } from "data/blogposts.js"
+	let {
+		children,
+	}: {
+		children: Snippet;
+	} = $props()
+	
+	import { blogposts } from "../../data/blogposts.ts"
 	import BlogpostCard from "$lib/BlogpostCard.svelte"
 	import Cards from "$lib/Cards.svelte"
+	import type { Snippet } from "svelte"
 	
 </script>
 
@@ -18,6 +25,8 @@
 			
 			<BlogpostCard
 				{blogpost}
+				url={`/blogposts/${blogpost.id}`}
+				elementId={`blogpost-${blogpost.id}`}
 			/>
 			
 		{/each}
@@ -26,4 +35,4 @@
 	
 </div>
 
-<slot />
+{@render children()}

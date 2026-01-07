@@ -1,11 +1,20 @@
-<script>
+<script lang="ts">
 	
-	export let type = "text"
-	export let name = ""
-	export let value = ""
-	export let title = ""
-	export let hint = ""
-	export let errorMessage = ""
+	let {
+		type,
+		name,
+		value,
+		title,
+		hint,
+		errorMessage,
+	}: {
+		type: string;
+		name: string;
+		value: string;
+		title: string;
+		hint: string;
+		errorMessage: string;
+	} = $props()
 	
 </script>
 

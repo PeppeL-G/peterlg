@@ -1,19 +1,31 @@
-<script>
+<script lang="ts">
 	
-	import { projects } from 'data/projects.js'
+	let {
+		project,
+		elementId,
+		url,
+	}: {
+		project: Project;
+		elementId: string;
+		url: string;
+	} = $props()
+	
+	import { projects } from '../data/projects.ts'
 	import Card from './Card.svelte'
 	
-	export let project = projects[0]
-	export let elementId = `project-${project.id}`
-	export let url = `/projects/${project.id}`
-	
-	const tagNames = [
-		`project`,
-	]
-	
-	if(project == projects[0]){
-		tagNames.unshift(`newest`)
-	}
+	let tagNames = $derived.by(() => {
+		
+		const tagNames = [
+			`blogpost`,
+		]
+		
+		if(project == projects[0]){
+			tagNames.unshift(`newest`)
+		}
+		
+		return tagNames
+		
+	})
 	
 </script>
 
@@ -24,5 +36,5 @@
 	content={project.introduction}
 	{tagNames}
 	imageUrl="/projects/{project.id}.png"
-	date="{project.datePosted}"
+	date={project.datePosted}
 />

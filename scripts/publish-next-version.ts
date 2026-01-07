@@ -21,7 +21,7 @@ const newVersion = "?.?.?"
 
 const pathToChangelogEntries = `./src/data/changelog-entries.js`
 
-if (newVersion == `?.?.?`) {
+if(newVersion == `?.?.?`){
 	console.log(`Must change newVersion from "${newVersion}" to actual new version.`)
 	process.exit(1)
 }

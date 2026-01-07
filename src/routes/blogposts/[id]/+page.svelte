@@ -1,10 +1,14 @@
-<script>
+<script lang="ts">
 	
-	import { page } from '$app/stores'
-	import BlogpostModal from '$lib/BlogpostModal.svelte'
+	import { page } from "$app/state"
+	import BlogpostModal from "$lib/BlogpostModal.svelte"
+	
+	const blogpostId = page.params.id!
 	
 </script>
 
 <BlogpostModal
-	id={$page.params.id}
+	{blogpostId}
+	closeUrl="/blogposts/"
+	originId={`blogpost-${blogpostId}`}
 />

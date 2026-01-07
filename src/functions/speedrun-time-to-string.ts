@@ -1,6 +1,6 @@
-export function speedrunTimeToString(time){
+export function speedrunTimeToString(time: Time){
 	
-	if (time.hours == 999) {
+	if(time.hours == 999){
 		return `??:??:??`
 	}
 	

@@ -1,18 +1,28 @@
-<script>
+<script lang="ts">
 	
-	export let href = ""
-	export let scaleFactor = 1.05
-	export let id = ""
+	let {
+		href,
+		scaleFactor = 1.05,
+		id,
+		children,
+	}: {
+		href: string;
+		scaleFactor?: number;
+		id?: string;
+		children: Snippet;
+	} = $props()
+	
+	import type { Snippet } from "svelte"
 	
 </script>
 
 <a
 	{href}
 	style:--scale-factor="{scaleFactor}"
-	id={id ? id : null}
+	{id}
 	rel="bookmark"
 >
-	<slot />
+	{@render children()}
 </a>
 
 <style>

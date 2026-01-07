@@ -1,4 +1,4 @@
-<script context="module">
+<script module>
 	
 	const colorsByName = new Map()
 	colorsByName.set("newest", "rgba(0, 255, 0, 0.5)")
@@ -8,8 +8,13 @@
 	
 </script>
 
-<script>
-	export let name = ""
+<script lang="ts">
+	
+	let {
+		name,
+	}: {
+		name: string;
+	} = $props()
 	
 </script>
 
@@ -21,6 +26,7 @@
 </span>
 
 <style>
+	
 	.tag{
 		display: inline-block;
 		border-radius: 0.5em;
@@ -30,4 +36,5 @@
 		font-weight: 700;
 		text-transform: capitalize;
 	}
+	
 </style>

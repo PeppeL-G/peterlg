@@ -1,12 +1,19 @@
-<script>
+<script lang="ts">
 	
-	import { projects } from "data/projects.js"
-	import { speedruns } from "data/speedruns.js"
-	import { blogposts } from "data/blogposts.js"
+	let {
+		children,
+	}: {
+		children: Snippet;
+	} = $props()
+	
+	import { projects } from "../../data/projects.ts"
+	import { speedruns } from "../../data/speedruns.ts"
+	import { blogposts } from "../../data/blogposts.ts"
 	import BlogpostCard from "$lib/BlogpostCard.svelte"
 	import ProjectCard from "$lib/ProjectCard.svelte"
 	import SpeedrunCard from "$lib/SpeedrunCard.svelte"
 	import Cards from "$lib/Cards.svelte"
+	import type { Snippet } from "svelte"
 	
 	const newestProject = projects[0]
 	const newestBlogpost = blogposts[0]
@@ -40,4 +47,4 @@
 	
 </Cards>
 
-<slot />
+{@render children()}

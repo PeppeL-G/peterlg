@@ -1,11 +1,11 @@
-import { getCenter } from "functions/get-center.js"
+import { getCenter } from "./get-center.ts"
 
-export function getElementCenterById(id) {
-
+export function getElementCenterById(id: string) {
+	
 	const element = document.getElementById(id) ?? document.body
-
+	
 	const rect = element.getBoundingClientRect()
-
+	
 	const x = getCenter(
 		rect.left,
 		rect.right,
@@ -14,10 +14,10 @@ export function getElementCenterById(id) {
 		rect.top,
 		rect.bottom,
 	)
-
+	
 	return {
 		x,
 		y,
 	}
-
+	
 }

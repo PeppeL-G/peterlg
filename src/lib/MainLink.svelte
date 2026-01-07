@@ -1,24 +1,23 @@
-<script>
+<script lang="ts">
 	
-	export let href = ""
+	let {
+		href,
+		children,
+	}: {
+		href: string;
+		children: Snippet;
+	} = $props()
 	
-	import { page } from "$app/stores"
-	
-	function isCurrent(p){
-		
-		const currentUrl = p.url.pathname
-		
-		return currentUrl.startsWith(href)
-		
-	}
+	import { page } from "$app/state"
+	import type { Snippet } from "svelte"
 	
 </script>
 
 <a
 	{href}
-	class:isCurrent={isCurrent($page)}
+	class:isCurrent={page.url.pathname.startsWith(href)}
 >
-	<slot />
+	{@render children()}
 </a>
 
 <style>

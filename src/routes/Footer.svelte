@@ -1,6 +1,6 @@
-<script>
+<script lang="ts">
 	import MainLink from "$lib/MainLink.svelte"
-	import { mainPages } from "data/main-pages.js"
+	import { mainPages } from "../data/main-pages.ts"
 	
 	const year = new Date().getFullYear();
 	
@@ -26,6 +26,7 @@
 </footer>
 
 <style>
+	
 	footer {
 		border: 1px solid black;
 		border-radius: 1em;
@@ -36,12 +37,13 @@
 		width: 75%;
 		overflow: hidden;
 	}
-
+	
 	.text {
 		line-height: 1.25;
 	}
-
+	
 	.text span {
 		white-space: nowrap;
 	}
+	
 </style>

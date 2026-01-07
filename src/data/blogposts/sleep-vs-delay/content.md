@@ -1,5 +1,7 @@
-<script>
+<script lang="ts">
+	
 	import Instructions from './Instructions.svelte'
+	
 </script>
 
 Many programming languages these days offer two different ways of doing nothing for `x` milliseconds:
@@ -27,11 +29,11 @@ A computer can be seen as a very simple machine that can only execute one instru
 
 For example, if you want to run three programs at "the same time" on a computer, the computer will:
 
-1. First run the first program for a few milliseconds
-2. Then run the second program for a few milliseconds
-3. Then run the third program for a few milliseconds
-4. Then run the first program for a few milliseconds again
-4. Then run the second program for a few milliseconds again
+1. First run the first program for a few milliseconds.
+2. Then run the second program for a few milliseconds.
+3. Then run the third program for a few milliseconds.
+4. Then run the first program for a few milliseconds again.
+4. Then run the second program for a few milliseconds again.
 5. Etc.
 
 The computer swaps between running the programs so fast, so we humans don't notice that it is happening!
@@ -91,12 +93,12 @@ The computer still runs the programs so fast that we humans won't notice that it
 ## Concurrency in a synchronous program
 A program itself often needs to do multiple things concurrently. For example, [a GIF image can be animated](https://giphy.com/explore/animated), so a GIF image can consist of multiple images, and when it's displayed on the screen by a program, the program will:
 
-1. First display the first image in the GIF on the screen
-2. Then wait a few milliseconds
-3. Then display the second image in the GIF on the screen
-4. Then wait a few milliseconds
-5. Then display the third image in the GIF on the screen
-6. Then wait a few milliseconds
+1. First display the first image in the GIF on the screen.
+2. Then wait a few milliseconds.
+3. Then display the second image in the GIF on the screen.
+4. Then wait a few milliseconds.
+5. Then display the third image in the GIF on the screen.
+6. Then wait a few milliseconds.
 7. Etc.
 
 The waiting here can be done using a synchronous `sleep()` call. That basically tells the OS "*I don't need to do anything for a few milliseconds*", and the OS can instruct the computer to swap to another program. Then, after a few milliseconds, the program will run again, and can instruct the computer to display the next image in the GIF on the screen, and so on.
@@ -143,9 +145,9 @@ Ah, this is where it gets interesting. Nothing stops you from using synchronous 
 
 Imagine your asynchronous program has the following three tasks it should complete:
 
-1. Draw the next image in a GIF on the screen
-2. Handle a received HTTP response (from a previously sent HTTP request)
-3. Handle a mouse button click
+1. Draw the next image in a GIF on the screen.
+2. Handle a received HTTP response (from a previously sent HTTP request).
+3. Handle a mouse button click.
 
 Your program starts by carrying out Task 1. In it, you draw the next image in the GIF on the screen, and then you need to add this very same task to the list again 1 second later (by default, tasks are deleted from the list when they have been carried out). Here you need to wait for 1 second, and you should use the asynchronous version of wait (often called `delay(1000ms)`). Then your program can continue with carrying out Task 2, and then Task 3, immediately after you have called `delay(1000ms)`.
 

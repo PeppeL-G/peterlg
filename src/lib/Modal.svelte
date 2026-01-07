@@ -1,11 +1,23 @@
-<script>
-	import { getElementCenterById } from "functions/get-element-center-by-id.js"
+<script lang="ts">
+    import type { AnimationConfig } from "svelte/animate";
+
 	
-	export let title = ""
-	export let closeUrl = "/"
-	export let originId = ""
+	let {
+		title,
+		closeUrl,
+		originId,
+		children,
+	}: {
+		title: string;
+		closeUrl: string;
+		originId: string;
+		children: Snippet;
+	} = $props()
 	
-	function backgroundTransition(node){
+	import { getElementCenterById } from "../functions/get-element-center-by-id.ts"
+	import type { Snippet } from "svelte"
+	
+	function backgroundTransition(node: HTMLElement): AnimationConfig{
 		return {
 			duration: 500,
 			css: (t) => {
@@ -17,7 +29,7 @@
 		
 	}
 	
-	function modalTransition(node) {
+	function modalTransition(node: HTMLElement): AnimationConfig{
 		
 		const originCenter = getElementCenterById(originId)
 		
@@ -39,13 +51,14 @@
 		
 	}
 	
-	function onCloseAnchorClick(event){
+	function onCloseAnchorClick(event: MouseEvent){
 		
-		const previousEntryUrl = window.navigation?.entries()?.at(-2)?.url
+		// Cast to any since Typescript doesn't know about the Navigation API.
+		const previousEntryUrl = (window as any).navigation?.entries()?.at(-2)?.url
 		
 		if(previousEntryUrl){
 			
-			const { href } = event.target
+			const { href } = event.target as HTMLAnchorElement
 			
 			console.log(href, previousEntryUrl)
 			
@@ -71,7 +84,7 @@
 	class="background"
 	href={closeUrl}
 	transition:backgroundTransition
-	on:click={onCloseAnchorClick}
+	onclick={onCloseAnchorClick}
 ></a>
 
 <article
@@ -82,7 +95,7 @@
 	
 	<h1>{title}</h1>
 	
-	<a class="close" href={closeUrl} on:click={onCloseAnchorClick}>
+	<a class="close" href={closeUrl} onclick={onCloseAnchorClick}>
 		<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
 			<line x1="20" y1="80" x2="80" y2="20" stroke="black" stroke-width="5" />
 			<line x1="20" y1="20" x2="80" y2="80" stroke="black" stroke-width="5" />
@@ -90,7 +103,7 @@
 	</a>
 	
 	<div class="content">
-		<slot />
+		{@render children()}
 	</div>
 	
 </article>

@@ -1,15 +1,21 @@
-<script>
+<script lang="ts">
+	
+	let {
+		src,
+		alt,
+	}: {
+		src: string;
+		alt: string;
+	} = $props()
 	
 	import { tick } from "svelte"
+	import type { Attachment } from "svelte/attachments"
 	
-	export let src = ""
-	export let alt = ""
+	let originalElement: HTMLElement
 	
-	let originalElement = null
-	
-	function fullScreenAction(element){
+	const fullScreenAttachment: Attachment<HTMLElement> = (element) => {
 		
-		const fullScreenElement = element.cloneNode(true)
+		const fullScreenElement = element.cloneNode(true) as HTMLElement
 		fullScreenElement.classList.add('fullScreen')
 		
 		fullScreenElement.addEventListener('click', function(){
@@ -33,7 +39,7 @@
 			fullScreenElement.style.setProperty(`--top`, `${rect.top}px`)
 			fullScreenElement.style.setProperty(`--bottom`, `calc(100vh - ${rect.top + rect.height}px)`)
 			
-			await tick();
+			await tick()
 			
 			fullScreenElement.style.transitionDuration = oldTransitionDuration
 			fullScreenElement.style.setProperty(`--left`, `0`)
@@ -43,10 +49,8 @@
 			
 		})
 		
-		return {
-			destroy(){
-				document.body.removeChild(fullScreenElement)
-			}
+		return () => {
+			document.body.removeChild(fullScreenElement)
 		}
 		
 	}
@@ -55,7 +59,7 @@
 
 <div
 	bind:this={originalElement}
-	use:fullScreenAction
+	{@attach fullScreenAttachment}
 	class="background"
 >
 	<img

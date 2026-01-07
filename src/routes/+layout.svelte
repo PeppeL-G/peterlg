@@ -1,40 +1,59 @@
-<script>
+<script lang="ts">
+	
+	let {
+		children,
+	}: {
+		children: Snippet;
+	} = $props()
 	
 	import Header from "./Header.svelte"
 	import Nav from "./Nav.svelte"
 	import Footer from "./Footer.svelte"
 	import "./global.css"
-	import { mainPages } from "data/main-pages.js"
-	import { page } from "$app/stores"
-	import FakedPageContent from "./FakedPageContent.svelte";
+	import { mainPages } from "../data/main-pages.ts"
+	import FakedPageContent from "./FakedPageContent.svelte"
+	import type { Snippet } from "svelte"
+	import { page } from "$app/state"
+	import type { Attachment } from "svelte/attachments"
 	
-	function isLeadingToMainPage(url, mainPage){
+	function isLeadingToMainPage(url: string, mainPage: MainPage){
 		return url.startsWith(mainPage.url)
 	}
 	
-	$: currentPageIndex = mainPages.findIndex(
-		p => isLeadingToMainPage($page.url.pathname, p),
+	let currentPageIndex = $derived(
+		mainPages.findIndex(
+			p => isLeadingToMainPage(page.url.pathname, p),
+		),
 	)
 	
-	const cachedPageChildren = {
+	const cachedPageChildren: Record<string, ChildNode[]> = {
 		// `/the/path`: [childNode1, ...],
 	}
 	
-	function storePageChildrenInCache(node, pagePath){
-		cachedPageChildren[pagePath] = [
-			...node.cloneNode(true).childNodes,
-		]
+	function createStorePageChildrenInCacheAttachment(pagePath: string){
+		
+		return function(node){
+			cachedPageChildren[pagePath] = [
+				...node.cloneNode(true).childNodes,
+			]
+		} as Attachment<HTMLElement>
+		
 	}
 	
-	function insertCachedPageChildren(node, pagePath) {
+	function createInsertCachedPageChildren(pagePath: string){
 		
-		const pageChildren = cachedPageChildren[pagePath]
+		return function insertCachedPageChildrenAttachment(node){
+			
+			const pageChildren = cachedPageChildren[pagePath]
+			
+			node.append(
+				...pageChildren.map(
+					child => child.cloneNode(true),
+				),
+			)
+			
+		} as Attachment<HTMLElement>
 		
-		node.append(
-			...pageChildren.map(
-				child => child.cloneNode(true),
-			),
-		)
 	}
 	
 </script>
@@ -50,17 +69,19 @@
 			
 			<section class="page" style:--pageIndex={pageIndex}>
 				
-				{#if isLeadingToMainPage($page.url.pathname, mainPage)}
+				{#if isLeadingToMainPage(page.url.pathname, mainPage)}
 					<main
 						data-sveltekit-noscroll
-						use:storePageChildrenInCache={mainPage.url}
+						{@attach createStorePageChildrenInCacheAttachment(mainPage.url)}
 					>
 						<h1>{mainPage.name}</h1>
-						<slot />
+						{@render children()}
 					</main>
 				{:else if mainPage.url in cachedPageChildren}
 					<div class="fakedPageContent" hidden>
-						<div use:insertCachedPageChildren={mainPage.url}></div>
+						<div
+							{@attach createInsertCachedPageChildren(mainPage.url)}
+						></div>
 					</div>
 				{:else}
 					<div class="fakedPageContent" hidden>

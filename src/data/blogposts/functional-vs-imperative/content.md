@@ -8,7 +8,7 @@ Let's start with functional programming. These courses were mostly focused on pr
 
 When a student faces a problem and asks for help with getting started, it's usually (always?) very easy to explain to the student how they should think:
 
-> 1. Find an instance of the problem that is so easy to solve that you can directly send back a value
+> 1. Find an instance of the problem that is so easy to solve that you can directly send back a value.
 > 2. If the problem is not that easy to solve, try to make the problem smaller somehow, such as by:
 > 
 > 	* Removing a value from a list, or

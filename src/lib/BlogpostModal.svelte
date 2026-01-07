@@ -1,20 +1,31 @@
-<script>
+<script lang="ts">
 	
-	import { blogposts } from 'data/blogposts.js'
+	let {
+		blogpostId,
+		closeUrl,
+		originId,
+	}: {
+		blogpostId: string;
+		closeUrl: string;
+		originId: string;
+	} = $props()
+	
 	import FullscreenableImage from '$lib/FullscreenableImage.svelte'
 	import Modal from '$lib/Modal.svelte'
+	import { blogposts } from '../data/blogposts.ts'
+	import { getBlogpostContentComponent } from '../functions/get-blogpost-content-component.ts'
 	
-	export let id = ``
-	export let closeUrl = `/blogposts`
-	export let originId = ``
-	
-	const blogpost = blogposts.find(b => b.id == id)
+	let blogpost = $derived(
+		blogposts.find(
+			b => b.id == blogpostId,
+		),
+	)
 	
 </script>
 
 <Modal
 	{closeUrl}
-	originId={originId != `` ? originId : `blogpost-${blogpost?.id}`}
+	originId={originId}
 	title={blogpost?.title ?? `Blogpost not found`}
 >
 	
@@ -41,7 +52,13 @@
 			</div>
 			
 			<div class="content">
-				<svelte:component this={blogpost.ContentComponent} />
+				{#await getBlogpostContentComponent(blogpost)}
+					<p>Loading...</p>
+				{:then BlogpostContentComponent}
+					<BlogpostContentComponent />
+				{:catch}
+					<p>Error: Could not load the content in the blogpost.</p>
+				{/await}
 			</div>
 			
 		</div>

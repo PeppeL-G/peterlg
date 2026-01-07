@@ -1,8 +1,15 @@
-<script>
+<script lang="ts">
+
+	let {
+		children,
+	}: {
+		children: Snippet;
+	} = $props()
 	
 	import Cards from '$lib/Cards.svelte'
 	import ProjectCard from '$lib/ProjectCard.svelte'
-	import { projects } from 'data/projects'
+	import type { Snippet } from 'svelte'
+	import { projects } from '../../data/projects'
 	
 </script>
 
@@ -14,10 +21,12 @@
 		
 		<ProjectCard
 			{project}
+			url={`/projects/${project.id}`}
+			elementId={`project-${project.id}`}
 		/>
 		
 	{/each}
 	
 </Cards>
 
-<slot />
+{@render children()}

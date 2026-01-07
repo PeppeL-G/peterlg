@@ -1,26 +1,37 @@
-<script>
+<script lang="ts">
+	
+	let {
+		speedrunId,
+		closeUrl,
+		originId,
+	}: {
+		speedrunId: number;
+		closeUrl: string;
+		originId: string;
+	} = $props()
 	
 	import Modal from '$lib/Modal.svelte'
-	import { speedrunTimeToString } from 'functions/speedrun-time-to-string.js';
-	import { games } from 'data/games.js'
-	import { speedruns } from 'data/speedruns.js'
+	import { speedrunTimeToString } from '../functions/speedrun-time-to-string.ts'
+	import { games } from '../data/games.ts'
+	import { speedruns } from '../data/speedruns.ts'
 	
-	export let id = 0
-	export let closeUrl = `/speedruns`
-	export let originId = ``
+	let speedrun = $derived(
+		speedruns.find(
+			s => s.id == speedrunId,
+		),
+	)!
 	
-	const speedrun = speedruns.find(
-		s => s.id == id,
-	)
-	const game = games.find(
-		g => g.id == speedrun?.gameId
-	)
+	let game = $derived(
+		games.find(
+			g => g.id == speedrun.gameId
+		),
+	)!
 	
 </script>
 
 <Modal
 	{closeUrl}
-	originId={originId != `` ? originId : `speedrun-${speedrun?.id}`}
+	originId={originId != `` ? originId : `speedrun-${speedrun.id}`}
 	title={game?.name ?? `Speedrun not found`}
 >
 	

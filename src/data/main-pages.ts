@@ -1,6 +1,6 @@
-import { changelogEntries } from "./changelog-entries.js"
+import { changelogEntries } from "./changelog-entries.ts"
 
-export const mainPages = [{
+export const mainPages: MainPage[] = [{
 	name: `Sopor`,
 	url: `/sopor/`,
 	where: `never`,
