@@ -12,14 +12,14 @@
  * 
  * 1. Change the newVersion constant to correct value in the code below
  * 2. Run the following command in this file's parent folder:
- *    node ./scripts/publish-next-version.js
+ *    node ./scripts/publish-next-version.ts
  */
 import childProcess from "node:child_process"
 import fs from "node:fs"
 
 const newVersion = "?.?.?"
 
-const pathToChangelogEntries = `./src/data/changelog-entries.js`
+const pathToChangelogEntries = `./src/data/changelog-entries.ts`
 
 if(newVersion == `?.?.?`){
 	console.log(`Must change newVersion from "${newVersion}" to actual new version.`)
@@ -105,7 +105,7 @@ function createCommit() {
 
 function restoreScriptFile() {
 	
-	const pathToScriptFile = `./scripts/publish-next-version.js`
+	const pathToScriptFile = `./scripts/publish-next-version.ts`
 	
 	let scriptFileAsString = fs.readFileSync(
 		pathToScriptFile,
