@@ -16,7 +16,7 @@
 	let tagNames = $derived.by(() => {
 		
 		const tagNames = [
-			`blogpost`,
+			`project`,
 		]
 		
 		if(project == projects[0]){
