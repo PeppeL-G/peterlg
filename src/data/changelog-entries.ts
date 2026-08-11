@@ -3,6 +3,7 @@ export const changelogEntries: ChangelogEntry[] = [{
 	date: `2026-xx-xx`,
 	changeDescriptions: [
 		`Fixed bug where some cards showed wrong tag names.`,
+		`Added the blogpost "LLM: Is it Really Intelligence?".`,
 	],
 }, {
 	version: `1.17.0`,
