@@ -4,6 +4,7 @@ export const changelogEntries: ChangelogEntry[] = [{
 	changeDescriptions: [
 		`Fixed bug where some cards showed wrong tag names.`,
 		`Added the blogpost "LLM: Is it Really Intelligence?".`,
+		`Added the blogpost "LLM: From Thinking to Acting".`,
 	],
 }, {
 	version: `1.17.0`,

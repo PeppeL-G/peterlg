@@ -1,4 +1,9 @@
 export const blogposts: Blogpost[] = [{
+	id: `llm-from-thinking-to-acting`,
+	title: `LLM: From Thinking to Acting`,
+	dateWritten: `2026-08-11`,
+	summary: `Large Language Models can in some sense think. But can they do things? Are we potentially in danger?`,
+}, {
 	id: `llm-is-it-really-intelligence`,
 	title: `LLM: Is it Really Intelligence?`,
 	dateWritten: `2026-08-11`,
