@@ -1,3 +1,7 @@
+<script>
+	import InfoBox from '$lib/InfoBox.svelte'
+</script>
+
 First, let's go through how Large Language Models (LLMs) actually work, and after that we can discuss whether they are intelligent or not, and you can make up your on mind on the matter. I'll skip going through the technical details of how LLMs are implemented internally, and will instead keep things simple by only explaining how they work from an external point of view.
 
 ## What is an LLM?
@@ -22,13 +26,11 @@ The LLM would output a table like:
 
 This output table contains a computed probability for every word the LLM is aware of/has been trained on. As you probably understand, this requires the computer that runs the LLM to carry out an enormously big amount of computations, which is one of the reasons why LLMs are very expensive and very slow to run.
 
-<div style="background-color: cyan; border: 2px solid black; margin: 2em; padding: 0.75em; border-radius: 1.5em;">
-
-<p style="font-weight: bold; text-align: center;">Actually...</p>
+<InfoBox title="LLMs can be fast...">
 
 LLMs can run "fast" by using a lot of very good and very expensive hardware. That's why you often get responses very quickly when writing [ChatGPT](https://chatgpt.com/) and other LLMs. But try running one on your own computer, and you will need to wait minutes/hours for responses from such good LLMs.
 
-</div>
+</InfoBox>
 
 From this output table, one then often picks the most probable next word (`girl` in the example above) to continue the text with:
 
@@ -36,13 +38,11 @@ From this output table, one then often picks the most probable next word (`girl`
 
 After this, you can send this new text into the LLM, and it will output a new table with words and their probabilities again, from which you then can select the most probable word to continue the text with again, and so on. This repeated usage of LLMs can be used to make them produce long texts, even though they are actually only producing one word at a time.
 
-<div style="background-color: cyan; border: 2px solid black; margin: 2em; padding: 0.75em; border-radius: 1.5em;">
-
-<p style="font-weight: bold; text-align: center;">Note</p>
+<InfoBox title="About generation of creative texts...">
 
 You don't always have to pick the most probable next word. If you want the LLM to generate a creative text (such as a new story), then you can instruct it to pick a random word out of the 5 most probable words, or similar, which will make it produce different texts each time it runs.
 
-</div>
+</InfoBox>
 
 So when you for example use ChatGPT and ask it a question like the following:
 
@@ -70,13 +70,11 @@ Then that question will be feed into the LLM, and it will go through the steps e
 >
 > The sky is blue.
 
-<div style="background-color: cyan; border: 2px solid black; margin: 2em; padding: 0.75em; border-radius: 1.5em;">
-
-<p style="font-weight: bold; text-align: center;">Clarification</p>
+<InfoBox title="Words VS Tokens...">
 
 I said that an LLM predicts the next word in a text. It's more accurate to say that it predicts the next *token*. A token can be an entire word, a part of a word, or a symbol like a dot, or a comma, etc.
 
-</div>
+</InfoBox>
 
 
 ## Are LLMs intelligent?

@@ -1,12 +1,14 @@
+<script>
+	import InfoBox from '$lib/InfoBox.svelte'
+</script>
+
 A Large Language Model (LLM) can only be used to predict the next word in a text. That doesn't sound that dangerous, right? So why do some experts raise concerns over that LLMs are dangerous and might be a threat to us humans? To understand this, we must first understand how developers can give LLMs the ability to act.
 
-<div style="background-color: cyan; border: 2px solid black; margin: 2em; padding: 0.75em; border-radius: 1.5em;">
-
-<p style="font-weight: bold; text-align: center;">Want to learn more?</p>
+<InfoBox title="Want to learn more?">
 
 For this blogpost, I assume you already know how LLMs work. If you don't know that, it's a good idea to first read the blogpost *LLM: Is it Really Intelligence?* on the [Blogposts](/blogposts) page.
 
-</div>
+</InfoBox>
 
 ## How to Make an LLM Act
 An LLM can't act on its own. Instead, an LLM that can act is actually a program that consists of 2 different components:
@@ -101,10 +103,8 @@ So security for all devices connected to the Internet is, as it always has been,
 
 A secure system is still a secure system. The real question is if we humans (even with the help of LLMs) ever can become capable of implementing them.
 
-<div style="background-color: cyan; border: 2px solid black; margin: 2em; padding: 0.75em; border-radius: 1.5em;">
-
-<p style="font-weight: bold; text-align: center;">Actually...</p>
+<InfoBox title="More dangers...">
 
 In addition to acting bad, LLMs can be used to come up with evil things (new viruses, new weapons, mislead people, etc.). This post only focuses on the dangers with giving LLMs the ability to act.
 
-</div>
+</InfoBox>

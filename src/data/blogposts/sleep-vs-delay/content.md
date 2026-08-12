@@ -1,6 +1,7 @@
 <script lang="ts">
 	
 	import Instructions from './Instructions.svelte'
+	import InfoBox from '$lib/InfoBox.svelte'
 	
 </script>
 
@@ -15,13 +16,11 @@ Many programming languages these days offer two different ways of doing nothing 
 
 As has been hinted, you must know the difference between synchronous programming and asynchronous programming to understand when to use which of the two versions. This blogpost aims to explain why it's important to use the right one, and what happens if you use the wrong one.
 
-<div style="background-color: yellow; border: 2px solid black; margin: 2em; padding: 0.75em; border-radius: 1.5em;">
-
-<p style="font-weight: bold; text-align: center;">WARNING</p>
+<InfoBox title="Simplifications have been made...">
 
 In this blogpost, some simplifications have been made to keep things simple (for examples, [multi-core processors](https://en.wikipedia.org/wiki/Multi-core_processor) and [hyper-threading](https://en.wikipedia.org/wiki/Hyper-threading) do make it possible for computers to do multiple things at the same time, contrarily to what this blogpost will claim), but the explained difference between synchronous programming and asynchronous programming is still accurate.
 
-</div>
+</InfoBox>
 
 
 ## Doing things "concurrently" on a computer
@@ -125,15 +124,13 @@ So, a program doesn't need to create new threads to do the waiting, instead the 
 
 This way, the computer is not overwhelmed with swapping program to run. Instead, each asynchronous program simply changes which task to run. And to change which task to run is much faster than changing which program to run, so asynchronous programs tends to run faster than synchronous programs, and this is the benefit with asynchronous programs! 
 
-<div style="background-color: lime; border: 2px solid black; margin: 2em; padding: 0.75em; border-radius: 1.5em;">
-
-<p style="font-weight: bold; text-align: center;">Note</p>
+<InfoBox title="Asynchronous programs aren't always faster...">
 
 Asynchronous programs run faster when there is concurrent work that needs to be done. If you have no concurrent work that needs to be done, then synchronous programs run faster, since they don't contain the overhead of a task list. In practice, it is often only small scripts that don't contain any concurrent work, so most programs can benefit from asynchronous programming.
 
 Also note that asynchronous programs often are a little bit harder to implement. No pain, no gain!
 
-</div>
+</InfoBox>
 
 ## What happens if I use asynchronous programming in my synchronous program?
 You can't really do this. To use asynchronous programming, your program must have a list of tasks it should carry out, and it will have that if you are able to use asynchronous programming in it, which makes it an asynchronous program.
