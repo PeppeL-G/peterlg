@@ -35,13 +35,12 @@
 	
 	.infoBox{
 		
-		margin: 2em;
+		margin: 1em 2em;
 		border: 2px solid black;
 		border-radius: 1em;
 		
 		.title{
 			font-weight: bold;
-			font-size: 1.2em;
 			padding: 1em;
 			cursor: pointer;
 		}

@@ -10,6 +10,7 @@ body {
 
 body{
 	background-color: #afafaf;
+	font-size: 1.1em;
 }
 
 * {
@@ -31,8 +32,30 @@ h1 {
 	text-align: center;
 }
 
+h2 {
+	margin-top: 0.6em;
+	margin-bottom: 0.25em;
+}
+
 p {
 	margin: 0 0 0.5em 0;
-	font-size: 1.2em;
 	line-height: 130%;
+}
+
+blockquote {
+	border-left: 5px solid rgba(0, 255, 255, 0.55);
+	padding: 0.5em 0.75em;
+	margin-left: 1em;
+}
+
+blockquote *:first-child {
+	margin-top: 0;
+}
+blockquote *:last-child {
+	margin-bottom: 0;
+}
+
+hr {
+	width: 80%;
+	margin: 1.5em auto;
 }

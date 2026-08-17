@@ -6,6 +6,7 @@ export const changelogEntries: ChangelogEntry[] = [{
 		`Added the blogpost "LLM: Is it Really Intelligence?".`,
 		`Added the blogpost "LLM: From Thinking to Acting".`,
 		`Added the InfoBox component.`,
+		`Minor visual improvements.`,
 	],
 }, {
 	version: `1.17.0`,

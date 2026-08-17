@@ -14,7 +14,7 @@
 	import type { Snippet } from 'svelte'
 	
 	const minTableScalePercentages = 25
-	const maxTableScalePercentages = 120
+	const maxTableScalePercentages = 100
 	
 	let tableScalePercentages = $state(maxTableScalePercentages)
 	

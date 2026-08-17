@@ -129,7 +129,7 @@
 		top: 50dvh;
 		
 		width: calc(100% - 1em);
-		max-width: 48em;
+		max-width: 65ch;
 		max-height: calc(100dvh - 1em);
 		padding: 1em;
 		border-radius: 1em;
