@@ -1,6 +1,4 @@
 <script lang="ts">
-    import type { AnimationConfig } from "svelte/animate";
-
 	
 	let {
 		title,
@@ -16,20 +14,22 @@
 	
 	import { getElementCenterById } from "../functions/get-element-center-by-id.ts"
 	import type { Snippet } from "svelte"
+	import type { TransitionConfig } from "svelte/transition"
 	
-	function backgroundTransition(node: HTMLElement): AnimationConfig{
+	function backgroundTransition(node: HTMLElement): TransitionConfig{
+		
 		return {
-			duration: 500,
+			duration: 250,
 			css: (t) => {
 				return `
-					opacity: ${1*t};
+					background-color: rgba(0, 0, 0, ${t/2});
 				`
-			}
+			},
 		}
 		
 	}
 	
-	function modalTransition(node: HTMLElement): AnimationConfig{
+	function modalTransition(node: HTMLElement): TransitionConfig{
 		
 		const originCenter = getElementCenterById(originId)
 		
@@ -43,8 +43,8 @@
 			duration: 500,
 			css: (t) => {
 				return `
-					transform: translate(-50%, -50%) scale(${1*t});
 					transform-origin: calc(50% - ${x}px) calc(50% - ${y}px);
+					transform: translate(-50%, -50%) scale(${t});
 				`
 			}
 		}
@@ -58,9 +58,7 @@
 		
 		if(previousEntryUrl){
 			
-			const { href } = event.target as HTMLAnchorElement
-			
-			console.log(href, previousEntryUrl)
+			const { href } = event.currentTarget as HTMLAnchorElement
 			
 			const regExpMatchSlashAtEnd = /\/$/
 			
@@ -83,14 +81,13 @@
 <a
 	class="background"
 	href={closeUrl}
-	transition:backgroundTransition
 	onclick={onCloseAnchorClick}
+	transition:backgroundTransition
 ></a>
 
 <article
 	class="modal"
-	in:modalTransition
-	out:modalTransition
+	transition:modalTransition
 >
 	
 	<h1>{title}</h1>

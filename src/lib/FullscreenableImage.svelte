@@ -8,49 +8,64 @@
 		alt: string;
 	} = $props()
 	
-	import { tick } from "svelte"
 	import type { Attachment } from "svelte/attachments"
 	
-	let originalElement: HTMLElement
-	
+	// When this attachment is used...
 	const fullScreenAttachment: Attachment<HTMLElement> = (element) => {
 		
+		// ... create a copy of the original element as the fullscreen element.
 		const fullScreenElement = element.cloneNode(true) as HTMLElement
 		fullScreenElement.classList.add('fullScreen')
 		
-		fullScreenElement.addEventListener('click', function(){
-			fullScreenElement.style.setProperty(`--left`, `50vw`)
-			fullScreenElement.style.setProperty(`--right`, `50vw`)
-			fullScreenElement.style.setProperty(`--top`, `50vh`)
-			fullScreenElement.style.setProperty(`--bottom`, `50vh`)
-		})
-		
-		document.body.appendChild(fullScreenElement)
-		
+		// When clicking on the original element...
 		element.addEventListener('click', async function(){
 			
 			const rect = element.getBoundingClientRect()
 			
-			const oldTransitionDuration = fullScreenElement.style.transitionDuration
+			// ...place the fullscreen element on top of the original element...
+			fullScreenElement.style.left   = `${rect.left}px`
+			fullScreenElement.style.right  = `${window.innerWidth - rect.right}px`
+			fullScreenElement.style.top    = `${rect.top}px`
+			fullScreenElement.style.bottom = `${window.innerHeight - rect.bottom}px`
 			
-			fullScreenElement.style.transitionDuration = `0s`
-			fullScreenElement.style.setProperty(`--left`, `${rect.left}px`)
-			fullScreenElement.style.setProperty(`--right`, `calc(100vw - ${rect.left + rect.width}px)`)
-			fullScreenElement.style.setProperty(`--top`, `${rect.top}px`)
-			fullScreenElement.style.setProperty(`--bottom`, `calc(100vh - ${rect.top + rect.height}px)`)
+			document.body.appendChild(fullScreenElement)
 			
-			await tick()
+			// ...and then transition the fullscreen element to full screen.
+			await new Promise(r => setTimeout(r))
+			fullScreenElement.classList.add('fullscreenTransitioning')
 			
-			fullScreenElement.style.transitionDuration = oldTransitionDuration
-			fullScreenElement.style.setProperty(`--left`, `0`)
-			fullScreenElement.style.setProperty(`--right`, `0`)
-			fullScreenElement.style.setProperty(`--top`, `0`)
-			fullScreenElement.style.setProperty(`--bottom`, `0`)
+			fullScreenElement.style.left   = `0px`
+			fullScreenElement.style.right  = `0px`
+			fullScreenElement.style.top    = `0px`
+			fullScreenElement.style.bottom = `0px`
 			
 		})
 		
+		// When clicking on the fullscreen element...
+		fullScreenElement.addEventListener('click', async function(){
+			
+			// ...place it over the original element...
+			const rect = element.getBoundingClientRect()
+			
+			fullScreenElement.style.left   = `${rect.left}px`
+			fullScreenElement.style.right  = `${window.innerWidth - rect.right}px`
+			fullScreenElement.style.top    = `${rect.top}px`
+			fullScreenElement.style.bottom = `${window.innerHeight - rect.bottom}px`
+			
+			fullScreenElement.classList.remove(`fullscreenTransitioning`)
+			
+			fullScreenElement.addEventListener('transitionend', (e) => {
+				fullScreenElement.remove()
+			}, { once: true })
+			
+		})
+		
+		// When this component is removed...
 		return () => {
-			document.body.removeChild(fullScreenElement)
+			
+			// ...remove the fullscreen element.
+			fullScreenElement.remove()
+			
 		}
 		
 	}
@@ -58,7 +73,6 @@
 </script>
 
 <div
-	bind:this={originalElement}
 	{@attach fullScreenAttachment}
 	class="background"
 >
@@ -74,30 +88,35 @@
 	.background{
 		display: grid;
 		place-items: center;
-		background-color: black;
+		grid-template-columns: minmax(0, 1fr);
+		grid-template-rows: minmax(0, 1fr);
 		cursor: pointer;
+		width: 100%;
+		height: 100%;
+		
+		transition-property: left, right, top, bottom, background-color;
+		transition-duration: 1s;
+	}
+	
+	:global(.fullscreenTransitioning){
+		background-color: rgba(0, 0, 0, 0.966) !important;
 	}
 	
 	:global(.background.fullScreen){
 		
-		--left: 50vw;
-		--right: 50vw;
-		--top: 50vh;
-		--bottom: 50vh;
-		
 		position: fixed;
-		left: var(--left);
-		right: var(--right);
-		top: var(--top);
-		bottom: var(--bottom);
+		/*
+			top, right, left, bottom set by JS.
+		*/
 		
-		transition-property: left, right, top, bottom;
-		transition-duration: 1s;
+		width: auto;
+		height: auto;
 		
 	}
 	
 	img{
 		max-width: 100%;
+		max-height: 100%;
 	}
 	
 </style>

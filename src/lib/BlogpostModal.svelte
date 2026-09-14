@@ -39,7 +39,7 @@
 			
 			<div class="image">
 				<FullscreenableImage
-					src={`/blogposts/${blogpost.id}.png`}
+					src={`/blogposts/${blogpost.id}.svg`}
 					alt="Blogpost."
 				/>
 			</div>
@@ -93,7 +93,7 @@
 		grid-column: 2 / span 1;
 		grid-row: 1 / span 1;
 		max-width: 100%;
-		border: 1px solid black;
+		width: 100%;
 	}
 	
 	.posted{

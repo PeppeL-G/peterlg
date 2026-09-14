@@ -35,6 +35,6 @@
 	title={project.title}
 	content={project.introduction}
 	{tagNames}
-	imageUrl="/projects/{project.id}.png"
+	imageUrl="/projects/{project.id}.svg"
 	date={project.datePosted}
 />

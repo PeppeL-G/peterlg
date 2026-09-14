@@ -28,8 +28,8 @@
 		<h3>{title}</h3>
 		<img src={imageUrl} alt="Card.">
 		<p>{content}</p>
-		<time datetime={date}>{date}</time>
 		<div>
+			<time datetime={date}>{date}</time>
 			{#each tagNames as tagName}
 				<Tag name={tagName} />
 			{/each}
@@ -66,24 +66,26 @@
 			
 			& img{
 				display: block;
-				margin: 0 auto;
+				margin: 0.25em auto;
 				max-width: 80%;
 			}
 			
 			& p{
-				margin: 0.25em 0;
+				margin: 0 0 0.25em 0;
 				font-size: 1em;
 				align-self: center;
 			}
 			
-			& time{
-				margin-bottom: 0.25em;
-			}
-			
 			& div{
+					
 				display: flex;
-				justify-content: right;
+				align-items: center;
 				gap: 0.5em;
+				
+				& time{
+					margin: 0.25em auto 0.25em 0;
+				}
+				
 			}
 			
 		}

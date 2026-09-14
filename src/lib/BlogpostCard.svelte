@@ -35,6 +35,6 @@
 	title={blogpost.title}
 	content={blogpost.summary}
 	{tagNames}
-	imageUrl="/blogposts/{blogpost.id}.png"
+	imageUrl="/blogposts/{blogpost.id}.svg"
 	date={blogpost.dateWritten}
 />

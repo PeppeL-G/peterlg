@@ -7,6 +7,7 @@ export const changelogEntries: ChangelogEntry[] = [{
 		`Added the blogpost "LLM: From Thinking to Acting".`,
 		`Added the InfoBox component.`,
 		`Minor visual improvements.`,
+		`Changed blogpost and project images from PNG to SVG. Transitions updated accordingly. A modal transition bug does sometime appear in Chromium based browsers, but that's a bug in their browser implementation (a race condition of some kind).`,
 	],
 }, {
 	version: `1.17.0`,

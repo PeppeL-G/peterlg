@@ -39,7 +39,7 @@
 			
 			<div class="image">
 				<FullscreenableImage
-					src={`/projects/${project.id}.png`}
+					src={`/projects/${project.id}.svg`}
 					alt="Project."
 				/>
 			</div>
@@ -92,8 +92,7 @@
 	.image{
 		grid-row: 2;
 		grid-column: 2;
-		max-width: 100%;
-		border: 1px solid black;
+		width: 100%;
 	}
 	
 	.posted{
