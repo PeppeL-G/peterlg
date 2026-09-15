@@ -67,8 +67,8 @@ function prepareChangelogEntriesForDev(){
 		{ encoding: "utf8" },
 	)
 	
-	const find = `export const changelogEntries = [{`
-	const replaceWith = `export const changelogEntries = [{
+	const find = `export const changelogEntries: ChangelogEntry[] = [{`
+	const replaceWith = `export const changelogEntries: ChangelogEntry[] = [{
 	version: \`?.?.?\`,
 	date: \`????-??-??\`,
 	changeDescriptions: [],
