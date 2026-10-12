@@ -1,6 +1,10 @@
 export const changelogEntries: ChangelogEntry[] = [{
 	version: `?.?.?`,
 	date: `????-??-??`,
+	changeDescriptions: [],
+}, {
+	version: `1.19.0`,
+	date: `2026-10-12`,
 	changeDescriptions: [
 		`Added the blogpost "LLM: Controlling Your Computer".`,
 	],
