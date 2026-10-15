@@ -9,10 +9,10 @@
 	import { projects } from "../../data/projects.ts"
 	import { speedruns } from "../../data/speedruns.ts"
 	import { blogposts } from "../../data/blogposts.ts"
-	import BlogpostCard from "$lib/BlogpostCard.svelte"
-	import ProjectCard from "$lib/ProjectCard.svelte"
-	import SpeedrunCard from "$lib/SpeedrunCard.svelte"
-	import Cards from "$lib/Cards.svelte"
+	import BlogpostCard from "#lib/BlogpostCard.svelte"
+	import ProjectCard from "#lib/ProjectCard.svelte"
+	import SpeedrunCard from "#lib/SpeedrunCard.svelte"
+	import Cards from "#lib/Cards.svelte"
 	import type { Snippet } from "svelte"
 	
 	const newestProject = projects[0]

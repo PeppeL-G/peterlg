@@ -7,8 +7,8 @@
 	} = $props()
 	
 	import { blogposts } from "../../data/blogposts.ts"
-	import BlogpostCard from "$lib/BlogpostCard.svelte"
-	import Cards from "$lib/Cards.svelte"
+	import BlogpostCard from "#lib/BlogpostCard.svelte"
+	import Cards from "#lib/Cards.svelte"
 	import type { Snippet } from "svelte"
 	
 </script>

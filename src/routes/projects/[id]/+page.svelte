@@ -1,7 +1,7 @@
 <script lang="ts">
 	
 	import { page } from "$app/state"
-	import ProjectModal from "$lib/ProjectModal.svelte"
+	import ProjectModal from "#lib/ProjectModal.svelte"
 	
 	const projectId = page.params.id!
 	

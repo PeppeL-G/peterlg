@@ -71,7 +71,6 @@
 				
 				{#if isLeadingToMainPage(page.url.pathname, mainPage)}
 					<main
-						data-sveltekit-noscroll
 						{@attach createStorePageChildrenInCacheAttachment(mainPage.url)}
 					>
 						<h1>{mainPage.name}</h1>

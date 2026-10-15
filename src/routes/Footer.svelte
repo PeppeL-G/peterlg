@@ -1,5 +1,5 @@
 <script lang="ts">
-	import MainLink from "$lib/MainLink.svelte"
+	import MainLink from "#lib/MainLink.svelte"
 	import { mainPages } from "../data/main-pages.ts"
 	
 	const year = new Date().getFullYear();

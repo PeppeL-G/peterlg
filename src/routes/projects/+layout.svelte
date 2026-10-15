@@ -6,8 +6,8 @@
 		children: Snippet;
 	} = $props()
 	
-	import Cards from '$lib/Cards.svelte'
-	import ProjectCard from '$lib/ProjectCard.svelte'
+	import Cards from '#lib/Cards.svelte'
+	import ProjectCard from '#lib/ProjectCard.svelte'
 	import type { Snippet } from 'svelte'
 	import { projects } from '../../data/projects'
 	

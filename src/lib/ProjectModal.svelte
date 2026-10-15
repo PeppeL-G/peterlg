@@ -10,8 +10,8 @@
 		originId: string;
 	} = $props()
 	
-	import FullscreenableImage from '$lib/FullscreenableImage.svelte'
-	import Modal from '$lib/Modal.svelte'
+	import FullscreenableImage from '#lib/FullscreenableImage.svelte'
+	import Modal from '#lib/Modal.svelte'
 	import { projects } from '../data/projects.ts'
 	import { getProjectContentComponent } from '../functions/get-project-content-component.ts'
 	

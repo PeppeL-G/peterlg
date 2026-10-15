@@ -9,7 +9,7 @@
 	import { speedrunTimeToString } from '../../functions/speedrun-time-to-string.ts'
 	import { games } from '../../data/games.ts'
 	import { speedruns } from '../../data/speedruns.ts'
-	import SubLink from '$lib/SubLink.svelte'
+	import SubLink from '#lib/SubLink.svelte'
 	import { createPinchAttachment } from '../../attachments/create-pinch-attachment.ts'
 	import type { Snippet } from 'svelte'
 	

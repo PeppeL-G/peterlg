@@ -1,16 +1,14 @@
 <script lang="ts">
-	
-	import { Temporal } from 'temporal-polyfill'
-	import { browser } from '$app/environment'
-	
+
+	import { Temporal } from 'temporal-polyfill';
+	import { browser } from '$app/env';
+
 	const trashPickupUrl = `https://minasidor.juneavfall.se/FutureWebJuneBasic/SimpleWastePickup/GetWastePickupSchedule?address=Grengatan%203%20B,%20Mullsj%C3%B6%20(38815)`
-	
-	async function getNextTrashPickup(){
-		
-		const response = await fetch(`https://corsproxy.io/?url=${trashPickupUrl}`)
-		
-		if(response.status != 200){
-			throw new Error(`Got status code ${response.status}.`)
+	async function getNextTrashPickup() {
+		const response = await fetch(`https://corsproxy.io/?url=${trashPickupUrl}`);
+
+		if (response.status != 200) {
+			throw new Error(`Got status code ${response.status}.`);
 		}
 		
 		const nextTrashPickup = await response.json()

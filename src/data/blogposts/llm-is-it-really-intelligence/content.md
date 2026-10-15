@@ -1,5 +1,5 @@
 <script>
-	import InfoBox from '$lib/InfoBox.svelte'
+	import InfoBox from '#lib/InfoBox.svelte'
 </script>
 
 First, let's go through how Large Language Models (LLMs) actually work, and after that we can discuss whether they are intelligent or not, and you can make up your on mind on the matter. I'll skip going through the technical details of how LLMs are implemented internally, and will instead keep things simple by only explaining how they work from an external point of view.

@@ -1,5 +1,5 @@
 <script>
-	import InfoBox from '$lib/InfoBox.svelte'
+	import InfoBox from '#lib/InfoBox.svelte'
 </script>
 
 A Large Language Model (LLM) can only be used to predict the next word in a text. That doesn't sound that dangerous, right? So why do some experts raise concerns over that LLMs are dangerous and might be a threat to us humans? To understand this, we must first understand how developers can give LLMs the ability to act.

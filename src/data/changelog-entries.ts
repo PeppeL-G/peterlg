@@ -1,7 +1,9 @@
 export const changelogEntries: ChangelogEntry[] = [{
 	version: `?.?.?`,
 	date: `????-??-??`,
-	changeDescriptions: [],
+	changeDescriptions: [
+		`Updated SvelteKit from to 2 to 3.`,
+	],
 }, {
 	version: `1.19.0`,
 	date: `2026-10-12`,

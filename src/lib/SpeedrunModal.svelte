@@ -10,7 +10,7 @@
 		originId: string;
 	} = $props()
 	
-	import Modal from '$lib/Modal.svelte'
+	import Modal from '#lib/Modal.svelte'
 	import { speedrunTimeToString } from '../functions/speedrun-time-to-string.ts'
 	import { games } from '../data/games.ts'
 	import { speedruns } from '../data/speedruns.ts'

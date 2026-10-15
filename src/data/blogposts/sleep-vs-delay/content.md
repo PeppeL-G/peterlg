@@ -1,7 +1,7 @@
 <script lang="ts">
 	
 	import Instructions from './Instructions.svelte'
-	import InfoBox from '$lib/InfoBox.svelte'
+	import InfoBox from '#lib/InfoBox.svelte'
 	
 </script>
 

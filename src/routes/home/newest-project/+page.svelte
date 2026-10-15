@@ -1,7 +1,7 @@
 <script lang="ts">
 	
 	import { projects } from "../../../data/projects.ts"
-	import ProjectModal from "$lib/ProjectModal.svelte"
+	import ProjectModal from "#lib/ProjectModal.svelte"
 	
 	const newestProject = projects[0]
 	

@@ -21,6 +21,7 @@
 	style:--scale-factor="{scaleFactor}"
 	{id}
 	rel="bookmark"
+	data-sveltekit-reset="false"
 >
 	{@render children()}
 </a>

@@ -1,7 +1,7 @@
 <script lang="ts">
 	
 	import { speedruns } from "../../../data/speedruns.ts"
-	import SpeedrunModal from "$lib/SpeedrunModal.svelte"
+	import SpeedrunModal from "#lib/SpeedrunModal.svelte"
 	
 	const newestSpeedrun = speedruns[0]
 	

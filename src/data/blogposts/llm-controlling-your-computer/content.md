@@ -1,5 +1,5 @@
 <script>
-	import InfoBox from '$lib/InfoBox.svelte'
+	import InfoBox from '#lib/InfoBox.svelte'
 </script>
 
 In the blogpost *LLM: From Thinking to Acting*, I showed a way to give a Large Language Model (LLM) the ability to act. That method relied on a programmer to hardcode the "tools" the LLM should be able to use when handling a message from the user.

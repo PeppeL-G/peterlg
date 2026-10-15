@@ -1,7 +1,7 @@
 <script lang="ts">
 	
 	import { blogposts } from "../../../data/blogposts.ts"
-	import BlogpostModal from "$lib/BlogpostModal.svelte"
+	import BlogpostModal from "#lib/BlogpostModal.svelte"
 	
 	const newestBlogpost = blogposts[0]
 	
