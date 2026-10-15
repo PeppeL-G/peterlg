@@ -4,6 +4,7 @@ export const changelogEntries: ChangelogEntry[] = [{
 	changeDescriptions: [
 		`Updated SvelteKit from to 2 to 3.`,
 		`Updated dependencies.`,
+		`Removed the secret page where I can see when the garbage truck comes (no longer free CORS request).`,
 	],
 }, {
 	version: `1.19.0`,
