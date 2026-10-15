@@ -18,7 +18,7 @@ export default defineConfig({
 				})
 			],
 			adapter: adapter(),
-			prerender: { entries: [`/`, `/sopor/`] }
+			prerender: { entries: [`/`] }
 		})
 	],
 	server: { open: true, host: true }
