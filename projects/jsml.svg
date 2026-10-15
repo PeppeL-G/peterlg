@@ -1,0 +1,43 @@
+<svg
+	xmlns="http://www.w3.org/2000/svg"
+	viewBox="0 0 100 60"
+>
+	
+	<path
+		d="
+			M 10.5 0.5
+			H 99.5
+			V 49.5
+			Q 99.5 59.5 89.5 59.5
+			H 0.5
+			V 10.5
+			Q 0.5 0.5 10.5 0.5
+			Z
+		"
+		fill="white"
+		stroke="black"
+	/>
+	
+	<text
+		x="50"
+		y="19"
+		font-size="33"
+		font-family="courier new"
+		text-anchor="middle"
+		dominant-baseline="central"
+	>
+		<tspan fill="blue" font-weight="bold">&lt;</tspan>JS&#160;
+	</text>
+	
+	<text
+		x="50"
+		y="43"
+		font-size="33"
+		font-family="Courier New"
+		text-anchor="middle"
+		dominant-baseline="central"
+	>
+		&#160;ML<tspan fill="blue" font-weight="bold">&gt;</tspan>
+	</text>
+	
+</svg>

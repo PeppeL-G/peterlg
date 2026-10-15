@@ -1,0 +1,1 @@
+import{H as e,V as t,n}from"../chunks/CD2XMejR.js";import"../chunks/NuoN_i35.js";import{r}from"../chunks/DRmEkPYq.js";import{t as i}from"../chunks/BOQ82Fgu.js";function a(a,o){e(o,!1);let s=r[0];n(),i(a,{get speedrunId(){return s.id},originId:`newest-speedrun`,closeUrl:`/home`}),t()}export{a as component};

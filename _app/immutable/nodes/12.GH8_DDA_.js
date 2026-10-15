@@ -1,0 +1,1 @@
+import{H as e,V as t,n}from"../chunks/CD2XMejR.js";import"../chunks/NuoN_i35.js";import{t as r}from"../chunks/8hGOQJmY.js";import{t as i}from"../chunks/C6tB1ocs.js";function a(a,o){e(o,!1);let s=r[0];n(),i(a,{get blogpostId(){return s.id},originId:`newest-blogpost`,closeUrl:`/home/`}),t()}export{a as component};

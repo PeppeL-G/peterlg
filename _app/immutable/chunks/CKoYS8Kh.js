@@ -1,0 +1,1 @@
+import{C as e,G as t,M as n,N as r,T as i,a,s as o,t as s,v as c}from"./CD2XMejR.js";var l=i(`<a rel="bookmark" data-sveltekit-reset="false" class="svelte-daxn99"><!></a>`);function u(i,u){let d=s(u,`scaleFactor`,3,1.05);var f=l();let p;var m=r(f);c(m,()=>u.children),t(f),n(()=>{a(f,`href`,u.href),a(f,`id`,u.id),p=o(f,``,p,{"--scale-factor":d()})}),e(i,f)}export{u as t};
