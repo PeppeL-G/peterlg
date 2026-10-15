@@ -1,4 +1,5 @@
 import type { Component } from "svelte"
+import { Temporal } from "temporal-polyfill"
 
 // SvelteKit docs: https://svelte.dev/docs/kit/types#app.d.ts
 declare global {

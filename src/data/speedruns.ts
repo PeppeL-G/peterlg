@@ -1,4 +1,4 @@
-import { Temporal } from "@js-temporal/polyfill"
+import { Temporal } from "temporal-polyfill"
 
 export const speedruns: Speedrun[] = [{
 	id: 44,
